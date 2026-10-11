@@ -5,7 +5,6 @@ description: "A tabletop RPG sourcebook inspired by the world of Oz."
 tags:
   - "print"
   - "editorial"
-  - "tabletop"
 featured: true
 order: 2
 thumbnail: "/assets/images/emerald-kingdom/emerald-kingdom-00.webp"
@@ -41,6 +40,7 @@ gallery:
 ---
 
 testing testing
+esting testing
 ---
 
 testing testing

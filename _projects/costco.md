@@ -3,7 +3,8 @@ layout: project
 title: "Costco"
 description: ""
 tags:
-  - "web/digital"
+  - "digital"
+  - "e-commerce"
   - "marketing"
 featured: false
 order: 8
