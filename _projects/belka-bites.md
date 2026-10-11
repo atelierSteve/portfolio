@@ -8,6 +8,17 @@ tags:
 featured: true
 order: 5
 thumbnail: "/assets/images/belka-bites/belka-bites-00.webp"
----
-
+gallery:
+  - layout: row
+    images:
+      - image: "/assets/images/belka-bites/belka-bites-00.webp"
+        alt: ""
+      - image: "/assets/images/belka-bites/belka-bites-01.webp"
+        alt: ""
+  - layout: row
+    images:
+      - image: "/assets/images/belka-bites/belka-bites-02.webp"
+        alt: ""
+      - image: "/assets/images/belka-bites/belka-bites-03.webp"
+        alt: ""
 ---

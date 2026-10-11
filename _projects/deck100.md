@@ -41,9 +41,3 @@ gallery:
 ---
 
 testing testing
-
-testing testing
- result number 80."
----
-
-testing testing

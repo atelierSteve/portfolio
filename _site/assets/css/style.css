@@ -155,7 +155,7 @@ h3.intro-headline {
   color: var(--color-accent);
 }
 .intro-description {
-  max-width: 38rem;
+  max-width: 60rem;
   margin: 0;
   padding: 1rem 0;
   color: var(--color-muted);

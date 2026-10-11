@@ -1,10 +1,15 @@
 ---
 layout: project
-title: "Bradley’s Tiny Vacation in Hell"
-description: ""
+title: "Bradley’s Vacation in Hell"
+description: "Bradley is a tiny little man and he went on vacation to hell."
 tags:
   - "illustration"
 featured: false
 order: 25
-thumbnail: "/assets/images/illustrations/bradley-in-hell-00.webp"
+thumbnail: "/assets/images/illustrations/bradley-in-hell.webp"
+gallery:
+  - layout: full
+    images:
+      - image: "/assets/images/illustrations/bradley-in-hell.webp"
+        alt: ""
 ---

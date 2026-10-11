@@ -1,10 +1,15 @@
 ---
 layout: project
 title: "CyberPatrick"
-description: ""
+description: "X-Men x SpongeBob"
 tags:
   - "illustration"
 featured: false
 order: 28
-thumbnail: "/assets/images/illustrations/cyberpatrick-00.webp"
+thumbnail: "/assets/images/illustrations/cyberpatrick.webp"
+gallery:
+  - layout: full
+    images:
+      - image: "/assets/images/illustrations/cyberpatrick.webp"
+        alt: ""
 ---

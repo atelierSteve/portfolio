@@ -1,10 +1,15 @@
 ---
 layout: project
 title: "Sharkman!"
-description: ""
+description: "He’s part shark, he’s part man, but he’s all Sharkman!"
 tags:
   - "illustration"
 featured: false
 order: 30
-thumbnail: "/assets/images/illustrations/sharkman-00.webp"
+thumbnail: "/assets/images/illustrations/sharkman.webp"
+gallery:
+  - layout: full
+    images:
+      - image: "/assets/images/illustrations/sharkman.webp"
+        alt: ""
 ---
