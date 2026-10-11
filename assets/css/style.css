@@ -1,148 +1,585 @@
+/* ========================================
+   1. DESIGN TOKENS
+   ======================================== */
 :root {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #202020;
-  background: #f7f6f2;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  scroll-behavior: smooth;
-  --page-gutter: clamp(1.25rem, 5vw, 5rem);
+  /* Colors */
+  --color-paper: #111111;
+  --color-ink: #ccc;
+  --color-muted: #aaa;
+  --color-accent: rgba(244, 67, 54, 1);
+  --color-tag-active-line: var(--color-line);
+  --color-tag-active: rgba(244, 67, 54, .4);
+  --color-tag-hover: rgba(244, 67, 54, .15);
+  --color-line: #ccc;
+  --color-tag-active-text: #f5f3ed;
+  /* Typography */
+  --font-display: Outfit, sans-serif;
+  --font-body: EB Garamond, serif;
+  --text-h1: 6.8535rem;
+  --text-h2: 4.2358rem;
+  --text-h3: 2.6179rem;
+  --text-h4: 1.618rem;
+  --text-h5: 1.409rem;
+  --text-h6: 1.204rem;
+  --text-body: 1rem;
+  --text-small: 0.8rem;
+  /* Layout */
+  --page-gutter: clamp(1rem, 2vw, 3rem);
+  --content-width: 100rem;
+  --section-gap: var(--page-gutter);
+  /* Motion */
+  --transition-fast: 180ms ease;
 }
-
+/* ========================================
+   2. RESET AND GLOBAL STYLES
+   ======================================== */
 * {
   box-sizing: border-box;
 }
-
+html {
+  font-size: 112.5%; /* 18px when browser default is 16px */
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.5;
 }
-
+img {
+  display: block;
+  max-width: 100%;
+}
 a {
   color: inherit;
+  text-decoration: none;
 }
-
-.site-header {
+button {
+  color: inherit;
+  font: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+/* ========================================
+   3. TYPE SCALE
+   ======================================== */
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.75em;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 1.1;
+}
+h1 {
+  font-size: var(--text-h1);
+}
+h2 {
+  font-size: var(--text-h2);
+}
+h3 {
+  font-size: var(--text-h3);
+}
+h4 {
+  font-size: var(--text-h4);
+}
+h5 {
+  font-size: var(--text-h5);
+}
+h6 {
+  font-size: var(--text-h6);
+}
+p {
+  font-size: var(--text-body);
+}
+small,
+.text-small {
+  font-size: var(--text-small);
+}
+/* ========================================
+   4. PAGE LAYOUT
+   ======================================== */
+main {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+/* ========================================
+   5. INTRODUCTION
+   ======================================== */
+.intro {
+  min-height: 15vh;
+  min-height: 15svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--page-gutter);
+}
+.intro-headline {
+  font-kerning: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 0 0 -.205rem;
+  font-family: var(--font-display);
+  padding: 0;
+  /* font-size: var(--text-h1); */
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+}
+h3.intro-headline {
+  letter-spacing: .1rem;
+}
+.intro-h1 {
+  margin: 0 0 0 -.515rem !important;
+}
+.intro-headline {
+  display: block;
+  max-width: 100%;
+}
+.intro-headline .accent {
+  color: var(--color-accent);
+}
+.intro-description {
+  max-width: 38rem;
+  margin: 0;
+  padding: 1rem 0;
+  color: var(--color-muted);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+}
+/* ========================================
+   6. STICKY IDENTITY + TAG NAVIGATION
+   ======================================== */
+.portfolio-sticky {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
+  /*
+  margin-inline: calc(-1 * var(--page-gutter));
+  padding: 0 var(--page-gutter) 0.75rem;
+  */
+  background: var(--color-paper);
+  border-bottom: 0.0625rem solid var(--color-line);
+}
+.portfolio-sticky.is-stuck {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 1.25rem var(--page-gutter);
-  background: #f7f6f2;
-  border-bottom: 1px solid #deddd7;
+  gap: 1rem;
 }
-
+.sticky-header {
+  display: none;
+  align-items: center;
+  flex: 0 0 auto;
+  min-height: 3.5rem;
+}
 .site-name {
-  font-weight: 750;
-  text-decoration: none;
-  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: 2.6179rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
 }
-
-.site-nav {
+.portfolio-sticky.is-stuck .sticky-header {
   display: flex;
+  animation: sticky-header-in 250ms ease both;
+}
+@keyframes sticky-header-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.sticky-sentinel {
+  height: 1px;
+  margin-bottom: -1px;
+}
+.tag-nav {
+  display: flex;
+  flex: 0 1 auto;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  padding-block: 1rem 1rem;
 }
-
-.site-nav a {
-  font-size: 0.9rem;
-  text-decoration: none;
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0.45rem 0.85rem;
+  border: 0.0625rem solid var(--color-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-ink);
+  font-size: var(--text-small);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
 }
-
-.site-nav a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
+/* Default tag hover */
+.tag:hover {
+  border-color: var(--color-accent);
+  background: var(--color-tag-hover);
+  color: var(--color-ink);
 }
-
-main {
-  padding: 0 var(--page-gutter);
+/* Active tag */
+.tag.is-active {
+  border-color: var(--color-tag-active-line);
+  background: var(--color-tag-active);
+  color: var(--color-tag-active-text);
 }
-
-.intro {
-  max-width: 850px;
-  padding: clamp(4rem, 10vw, 9rem) 0;
+/* Hovering an active tag */
+.tag.is-active:hover {
+  border-color: var(--color-accent);
+  background: var(--color-tag-active);
+  color: var(--color-tag-active-text);
 }
-
-.eyebrow {
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  font-weight: 700;
+/* Keyboard focus */
+.tag:focus-visible {
+  outline: 0.125rem solid var(--color-accent);
+  outline-offset: 0.1875rem;
 }
-
-.intro h1 {
-  max-width: 750px;
-  margin: 1rem 0;
-  font-size: clamp(2.8rem, 7vw, 6.5rem);
-  line-height: 0.98;
-  letter-spacing: -0.06em;
+/* ========================================
+   7. PORTFOLIO GRID
+   ======================================== */
+.portfolio {
+  padding-block: 2rem var(--section-gap);
 }
-
-.intro > p:last-child {
-  max-width: 550px;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #5c5b56;
-}
-
-.work-section {
-  padding: 3rem 0 5rem;
-  border-top: 1px solid #deddd7;
-  scroll-margin-top: 5rem;
-}
-
-.work-section h2 {
-  margin: 0 0 2rem;
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-}
-
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
+  gap: 2rem 1.5rem;
 }
-
+.project-card {
+  min-width: 0;
+}
+/* Project covers: equal-height, responsive crops */
+.project-thumbnail {
+  display: block;
+  width: 100%;
+  height: clamp(12rem, 28vw, 24rem);
+  object-fit: cover;
+  object-position: center;
+}
+.project-link {
+  display: block;
+}
 .project-placeholder {
-  display: grid;
-  min-height: 260px;
-  place-items: center;
-  background: #e5e3dc;
-  color: #77756e;
-  font-size: 3rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  aspect-ratio: 1.8 / 1;
+  padding: 1rem;
+  overflow: hidden;
+  background: var(--color-line);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: var(--text-h5);
+  line-height: 1;
+  transition: background var(--transition-fast);
 }
-
-.project-card h3 {
-  margin: 1rem 0 0.4rem;
+.project-link:hover .project-placeholder {
+  background: #c9c5b9;
 }
-
-.project-card p {
-  margin-top: 0;
-  color: #5c5b56;
+.project-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.85rem;
 }
-
+.project-info h2 {
+  margin: 0;
+  font-family:;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.project-arrow {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  transition: transform var(--transition-fast);
+}
+.project-link:hover .project-arrow {
+  transform: translate(0.1875rem, -0.1875rem);
+}
+.project-tags {
+  margin: 0 0;
+  color: var(--color-muted);
+  font-size: var(--text-small);
+  line-height: 1.5;
+}
+/* ========================================
+   8. FOOTER
+   ======================================== */
 .site-footer {
-  padding: 2rem var(--page-gutter);
-  border-top: 1px solid #deddd7;
-  color: #5c5b56;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding: 1.5rem var(--page-gutter) 2rem;
+  border-top: 0.0625rem solid var(--color-line);
+  color: var(--color-muted);
+  font-size: var(--text-small);
+}
+.site-footer p {
+  margin: 0;
+}
+/* ========================================
+   9. RESPONSIVE STYLES
+   ======================================== */
+@media (max-width: 56.25rem) {
+  .intro-headline {
+    font-size: clamp(3.5rem, 10vw, 6.5rem);
+  }
+}
+/* ========================================
+   9.1. PORTFOLIO STICKY RESPONSIVE
+   ======================================== */
+@media (max-width: 80rem) {
+  .portfolio-sticky.is-stuck {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .portfolio-sticky.is-stuck .sticky-header {
+    min-height: auto;
+  }
+
+  .portfolio-sticky.is-stuck .tag-nav {
+    width: 100%;
+    padding-block: 0rem 1rem;
+  }
 }
 
-@media (max-width: 760px) {
-  .site-header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 1rem;
+@media (max-width: 37.5rem) {
+  :root {
+    --page-gutter: 1.1rem;
   }
-
-  .site-nav {
-    gap: 0.75rem 1rem;
+  .intro {
+    min-height: 65svh;
+    padding-block: 4rem;
   }
-
+  .intro-headline {
+    font-size: clamp(3rem, 12vw, 4.75rem);
+    line-height: 0.88;
+    letter-spacing: -0.035em;
+  }
+  .portfolio-sticky {
+    padding-bottom: 0.65rem;
+  }
+  .portfolio-sticky.is-stuck {
+    gap: 0.75rem;
+  }
+  .sticky-header {
+    min-height: 3rem;
+  }
+  .site-name {
+    font-size: 1.25rem;
+  }
+  .tag-nav {
+    flex: 1 1 0;
+    flex-wrap: nowrap;
+    min-width: 0;
+    gap: 0.4rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    padding-block: 0rem 1rem;
+  }
+  .tag-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .tag {
+    min-height: 2rem;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.75rem;
+  }
   .project-grid {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
-
-  .project-placeholder {
-    min-height: 220px;
+  .project-info h2 {
+    font-size: 1.15rem;
+  }
+}
+/* ========================================
+   10. REDUCED MOTION
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* ========================================
+   11. PROJECT PAGES
+   ======================================== */
+/* Project header */
+.project-header {
+  max-width: none;
+  margin-bottom: var(--section-gap);
+}
+/* Project title wrapping is natural; no nowrap override */
+.project-back {
+  display: inline-block;
+  margin-bottom: var(--section-gap);
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.project-back:hover {
+  color: var(--color-accent);
+}
+/* Project description */
+.project-description {
+  max-width: 65ch;
+  color: var(--color-muted);
+  font-size: var(--text-h4);
+  line-height: 1.5;
+}
+/* Project category tags */
+.project-header .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.project-header .tag {
+  cursor: default;
+}
+/* Keep project-page category labels visually static on hover */
+.project-header .tag:hover {
+  border-color: var(--color-line);
+  background: transparent;
+  color: var(--color-ink);
+}
+/* Written project content */
+.project-content {
+  max-width: 750px;
+  margin-bottom: var(--section-gap);
+}
+.project-content h2 {
+  margin-top: var(--section-gap);
+}
+.project-content p {
+  line-height: 1.7;
+}
+.project-content > :first-child {
+  margin-top: 0;
+}
+/* ========================================
+   12. PROJECT GALLERY
+   ======================================== */
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+}
+.project-gallery-group {
+  min-width: 0;
+}
+/* Full-width images */
+.project-gallery-group--full {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.project-gallery-group--full .project-gallery-item {
+  width: 100%;
+  margin: 0;
+}
+.project-gallery-group--full img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* Equal-height rows */
+.project-gallery-group--row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  min-width: 0;
+}
+.project-gallery-group--row .project-gallery-item {
+  flex: 0 0 auto;
+  min-width: 0;
+  margin: 0;
+}
+.project-gallery-group--row img {
+  display: block;
+  width: auto;
+  height: var(--gallery-row-height, auto);
+  max-width: none;
+  object-fit: contain;
+}
+/* Stacked images */
+.project-gallery-group--stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.project-gallery-group--stack .project-gallery-item {
+  max-width: 100%;
+  margin: 0;
+}
+.project-gallery-group--stack img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 70rem;
+}
+/* Captions */
+.project-gallery-item figcaption {
+  margin-top: 0.75rem;
+  color: var(--color-muted);
+  font-size: var(--text-body);
+  line-height: 1.5;
+}
+/* Mobile */
+@media (max-width: 700px) {
+  .project-gallery,
+  .project-gallery-group--full,
+  .project-gallery-group--row,
+  .project-gallery-group--stack {
+    gap: 1rem;
   }
 }

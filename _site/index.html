@@ -3,66 +3,230 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio</title>
+  <title>Shayne Valencia's Portfolio</title>
   <meta name="description" content="A portfolio of design, digital content, and creative projects.">
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <header class="site-header">
-  <a class="site-name" href="/">Your Name</a>
-
-  <nav class="site-nav" aria-label="Main navigation">
-    <a href="#graphic-design">Graphic Design</a>
-    <a href="#sculpture">Sculpture</a>
-    <a href="#illustration">Illustration</a>
-    <a href="#video">Video</a>
-    <a href="#tabletop">Tabletop</a>
-  </nav>
-</header>
-
-<main>
+  <main>
+  <!-- Full-size introduction -->
   <section class="intro">
-    <p class="eyebrow">DESIGN · DIGITAL CONTENT · CREATIVE PROJECTS</p>
-    <h1>A collection of things I've made.</h1>
-    <p>Visual design, digital publishing, and experiments across different mediums.</p>
+    <h1 class="intro-headline intro-h1">
+      <span style="display:inline">Shayne V</span><span style="display:inline; margin-left: -1.15rem">alencia</span>
+    </h1>
+    <h3 class="intro-headline">
+      Visual Designer & Digital Content Specialist
+    </h3>
+
+    <p class="intro-description">
+      Visual design, digital publishing, and creative work
+      across different mediums.
+    </p>
   </section>
 
-  <section class="work-section" id="graphic-design">
-    <h2>Graphic Design</h2>
+  <!-- Compact sticky header + portfolio filters -->
+  <div class="sticky-sentinel" aria-hidden="true"></div>
+  <div id="portfolio-sticky" class="portfolio-sticky">
+    <header class="sticky-header">
+      <a class="site-name" href="/">Shayne Valencia</a>
+    </header>
+
+      
+
+      <nav class="tag-nav" aria-label="Filter projects">
+        <button class="tag is-active" type="button" data-filter="featured">
+          Featured
+        </button>
+        <button class="tag" type="button" data-filter="all">
+          All
+        </button>
+
+      
+
+      
+        <button class="tag" type="button" data-filter="branding">
+          Branding
+        </button>
+      
+        <button class="tag" type="button" data-filter="editorial">
+          Editorial
+        </button>
+      
+        <button class="tag" type="button" data-filter="graphic-design">
+          Graphic design
+        </button>
+      
+        <button class="tag" type="button" data-filter="package-design">
+          Package design
+        </button>
+      
+        <button class="tag" type="button" data-filter="print">
+          Print
+        </button>
+      
+        <button class="tag" type="button" data-filter="tabletop">
+          Tabletop
+        </button>
+      
+    </nav>
+
+  </div>
+
+  <!-- One continuous project collection -->
+  <section class="portfolio" aria-label="Portfolio projects">
+    
+    
     <div class="project-grid">
-      <article class="project-card">
-        <div class="project-placeholder">01</div>
-        <h3>Project Title</h3>
-        <p>A short description of the work.</p>
-      </article>
-      <article class="project-card">
-        <div class="project-placeholder">02</div>
-        <h3>Project Title</h3>
-        <p>A short description of the work.</p>
-      </article>
+      
+
+      
+        <article class="project-card"
+                data-tags="graphic-design tabletop branding package-design"
+                data-featured="true">
+
+          <a class="project-link" href="/projects/deck100/">
+            
+              <img
+                class="project-thumbnail"
+                src="/assets/images/deck100/deck100-00.webp"
+                alt="Deck100"
+                loading="lazy"
+              >
+            
+
+            <div class="project-info">
+              <h2>Deck100</h2>
+<!--              <span class="project-arrow" aria-hidden="true">↗</span> -->
+            </div>
+            
+            <p class="project-tags">
+              
+                Graphic design · 
+              
+                Tabletop · 
+              
+                Branding · 
+              
+                Package design
+              
+            </p>
+          </a>
+        </article>
+      
+        <article class="project-card"
+                data-tags="graphic-design editorial tabletop print"
+                data-featured="true">
+
+          <a class="project-link" href="/projects/emerald-kingdom/">
+            
+              <img
+                class="project-thumbnail"
+                src="/assets/images/emerald-kingdom/emerald-kingdom-00.webp"
+                alt="Emerald Kingdom"
+                loading="lazy"
+              >
+            
+
+            <div class="project-info">
+              <h2>Emerald Kingdom</h2>
+<!--              <span class="project-arrow" aria-hidden="true">↗</span> -->
+            </div>
+            
+            <p class="project-tags">
+              
+                Graphic design · 
+              
+                Editorial · 
+              
+                Tabletop · 
+              
+                Print
+              
+            </p>
+          </a>
+        </article>
+      
+        <article class="project-card"
+                data-tags="graphic-design editorial print"
+                data-featured="true">
+
+          <a class="project-link" href="/projects/sinister/">
+            
+              <img
+                class="project-thumbnail"
+                src="/assets/images/sinister/sinister-00.webp"
+                alt="Sinister Paranormal Quarterly"
+                loading="lazy"
+              >
+            
+
+            <div class="project-info">
+              <h2>Sinister Paranormal Quarterly</h2>
+<!--              <span class="project-arrow" aria-hidden="true">↗</span> -->
+            </div>
+            
+            <p class="project-tags">
+              
+                Graphic design · 
+              
+                Editorial · 
+              
+                Print
+              
+            </p>
+          </a>
+        </article>
+      
+        <article class="project-card"
+                data-tags="graphic-design editorial print"
+                data-featured="true">
+
+          <a class="project-link" href="/projects/annual-report/">
+            
+              <img
+                class="project-thumbnail"
+                src="/assets/images/annual-report/annual-report-00.webp"
+                alt="Annual Report"
+                loading="lazy"
+              >
+            
+
+            <div class="project-info">
+              <h2>Annual Report</h2>
+<!--              <span class="project-arrow" aria-hidden="true">↗</span> -->
+            </div>
+            
+            <p class="project-tags">
+              
+                Graphic design · 
+              
+                Editorial · 
+              
+                Print
+              
+            </p>
+          </a>
+        </article>
+      
     </div>
-  </section>
 
-  <section class="work-section" id="sculpture">
-    <h2>Sculpture</h2>
-  </section>
 
-  <section class="work-section" id="illustration">
-    <h2>Illustration</h2>
-  </section>
-
-  <section class="work-section" id="video">
-    <h2>Video</h2>
-  </section>
-
-  <section class="work-section" id="tabletop">
-    <h2>Tabletop</h2>
   </section>
 </main>
 
 <footer class="site-footer">
-  <p>Designed and built by Your Name.</p>
+  <p>Shayne Valencia · Portfolio</p>
 </footer>
 
+<script src="/assets/js/tag-filter.js" defer></script>
+
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/gallery-rows.js" defer></script>
 </body>
 </html>

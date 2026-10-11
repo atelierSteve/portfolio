@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<main class="project-page">
+
+  <header class="project-header">
+    <a class="project-back" href="{{ '/' | relative_url }}">
+      ← Back to featured work
+    </a>
+
+    <h1 class="intro-headline intro-h1">{{ page.title | escape }}</h1>
+
+    {% if page.description %}
+      <p class="intro-description">
+        {{ page.description | escape }}
+      </p>
+    {% endif %}
+    
+    {% if page.tags %}
+      <ul class="project-tags" aria-label="Project categories">
+        {% for tag in page.tags %}
+          <li>
+            <span class="tag">
+              {{ tag | replace: "-", " " | capitalize }}
+            </span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+  </header>
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+
+  {% if page.gallery %}
+    <section class="project-gallery" aria-label="Project gallery">
+      {% for group in page.gallery %}
+        <div class="project-gallery-group project-gallery-group--{{ group.layout | default: 'full' | escape }}">
+          {% for item in group.images %}
+            <figure class="project-gallery-item">
+              <img
+                src="{{ item.image | relative_url }}"
+                alt="{{ item.alt | default: page.title | escape }}"
+                loading="lazy"
+              >
+
+              {% if item.caption %}
+                <figcaption>{{ item.caption | escape }}</figcaption>
+              {% endif %}
+            </figure>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+</main>

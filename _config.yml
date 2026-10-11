@@ -2,3 +2,7 @@ title: Your Name — Portfolio
 description: A portfolio of design, digital content, and creative projects.
 markdown: kramdown
 permalink: /projects/:name/
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/

@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Type Scale Playground</title>
+  <meta name="description" content="A portfolio of design, digital content, and creative projects.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <main class="page">
+  <style>
+    /* ------------------------------
+       1. DESIGN TOKENS
+    ------------------------------ */
+
+    :root {
+      --base-size: 1rem;
+      --scale-ratio: 1.25;
+
+      --font-body: Arial, sans-serif;
+      --font-display: Georgia, serif;
+
+      --color-panel: #333333;
+      --color-text: #22231f;
+      --color-border: #deded6;
+
+      --space-1: 0.5rem;
+      --space-2: 1rem;
+      --space-3: 1.5rem;
+      --space-4: 2rem;
+      --space-5: 3rem;
+    }
+
+    /* ------------------------------
+       2. RESET & BASE STYLES
+    ------------------------------ */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: var(--space-4);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      font-family: var(--font-body);
+      line-height: 1.5;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button,
+    select,
+    input {
+      accent-color: var(--color-accent);
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 var(--space-1);
+      color: var(--color-accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .page-header {
+      margin-bottom: var(--space-5);
+    }
+
+    .page-header h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .page-header p:last-child {
+      max-width: 600px;
+      color: var(--color-muted);
+    }
+
+    /* ------------------------------
+       3. PLAYGROUND LAYOUT
+    ------------------------------ */
+
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+      gap: var(--space-3);
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--color-panel);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: var(--space-3);
+      min-width: 0;
+    }
+
+    .controls {
+      position: sticky;
+      top: 1rem;
+    }
+
+    .panel h2 {
+      margin: 0 0 var(--space-3);
+      font-size: 1rem;
+    }
+
+    .control {
+      margin-bottom: var(--space-3);
+    }
+
+    .control label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .control output {
+      color: var(--color-accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .control input[type="range"],
+    .control select {
+      width: 100%;
+    }
+
+    .control select {
+      padding: 0.6rem;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 5px;
+    }
+
+    .control input[type="checkbox"] {
+      width: auto;
+      margin: 0;
+    }
+
+    .formula {
+      padding: 0.85rem;
+      background: var(--color-bg);
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.75rem;
+      overflow-wrap: anywhere;
+    }
+
+    .formula p {
+      margin: 0.25rem 0;
+    }
+
+    .reset-button {
+      width: 100%;
+      padding: 0.7rem;
+      background: var(--color-accent);
+      color: white;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* ------------------------------
+       4. TYPE SPECIMENS
+    ------------------------------ */
+
+    .specimen-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: var(--space-3);
+    }
+
+    .specimen-header h2 {
+      margin: 0;
+    }
+
+    .specimen-header span {
+      color: var(--color-muted);
+      font-size: 0.75rem;
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 100px minmax(0, 1fr);
+      gap: var(--space-2);
+      padding: var(--space-3) 0;
+      border-top: 1px solid var(--color-border);
+      align-items: start;
+    }
+
+    .type-meta {
+      padding-top: 0.25rem;
+      color: var(--color-muted);
+      font-family: monospace;
+      font-size: 0.7rem;
+      overflow-wrap: anywhere;
+    }
+
+    .type-meta strong {
+      display: block;
+      color: var(--color-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .type-sample {
+      margin: 0;
+      min-width: 0;
+      font-family: var(--font-display);
+      font-size: var(--sample-size);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      overflow-wrap: anywhere;
+    }
+
+    /* Uppercase toggle: affects specimen text only. */
+    #typeScale.all-caps .type-sample {
+      text-transform: uppercase;
+    }
+
+    .type-row[data-level="0"] .type-sample,
+    .type-row[data-level="-1"] .type-sample,
+    .type-row[data-level="-2"] .type-sample {
+      font-family: var(--font-body);
+      letter-spacing: 0;
+      line-height: 1.4;
+    }
+
+    .body-sample {
+      margin-top: var(--space-5);
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .body-sample h3 {
+      margin: 0 0 var(--space-2);
+      font-size: 1rem;
+    }
+
+    .body-sample p {
+      max-width: 65ch;
+      margin: 0 0 1rem;
+      font-size: var(--base-size);
+      line-height: 1.65;
+    }
+
+    .body-sample .small-copy {
+      color: var(--color-muted);
+      font-size: calc(var(--base-size) * 0.875);
+    }
+
+    /* ------------------------------
+       5. RESPONSIVE LAYOUT
+    ------------------------------ */
+
+    @media (max-width: 720px) {
+      body {
+        padding: 1rem;
+      }
+
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .controls {
+        position: static;
+      }
+
+      .type-row {
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 0.75rem;
+      }
+    }
+  </style>
+
+    <header class="page-header">
+      <p class="eyebrow">Design tools / Typography</p>
+      <h1>Type Scale Playground</h1>
+      <p>
+        Explore modular type scales. Adjust the base size and ratio
+        to build a hierarchy that works for your project.
+      </p>
+    </header>
+
+    <div class="workspace">
+
+      <!-- CONTROLS -->
+
+      <aside class="panel controls">
+        <h2>Scale settings</h2>
+
+        <div class="control">
+          <label for="baseSize">
+            <span>Base size</span>
+            <output id="baseOutput">1rem</output>
+          </label>
+          <input
+            id="baseSize"
+            type="range"
+            min="0.75"
+            max="1.5"
+            step="0.0625"
+            value="1"
+          >
+        </div>
+
+        <div class="control">
+          <label for="ratio">
+            <span>Scale ratio</span>
+            <output id="ratioOutput">1.25</output>
+          </label>
+          <select id="ratio">
+            <option value="1.067">1.067 — Minor Second</option>
+            <option value="1.125">1.125 — Major Second</option>
+            <option value="1.2">1.2 — Minor Third</option>
+            <option value="1.25" selected>1.25 — Major Third</option>
+            <option value="1.333">1.333 — Perfect Fourth</option>
+            <option value="1.414">1.414 — Augmented Fourth</option>
+            <option value="1.5">1.5 — Perfect Fifth</option>
+            <option value="1.618">1.618 — Golden Ratio</option>
+          </select>
+        </div>
+
+        <div class="control">
+          <label for="displayFont">Display typeface</label>
+          <select id="displayFont">
+            <option value="Outfit, sans-serif">Outfit / Sans-serif</option>
+            <option value="Arial, sans-serif">Arial / Sans-serif</option>
+            <option value="Jost, sans-serif">Jost / Sans-serif</option>
+            <option value="EB Garamond, serif">EB Garamond / Serif</option>
+            <option value="'Times New Roman', serif">Times New Roman</option>
+            <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+            <option value="monospace">Monospace</option>
+          </select>
+        </div>
+
+        <div class="control">
+          <label for="bodyFont">Body typeface</label>
+          <select id="bodyFont">
+            <option value="EB Garamond, serif">EB Garamond / Serif</option>
+            <option value="Arial, sans-serif">Arial / Sans-serif</option>
+            <option value="Jost, sans-serif">Jost / Sans-serif</option>
+            <option value="Georgia, serif">Georgia / Serif</option>
+            <option value="'Times New Roman', serif">Times New Roman</option>
+            <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+            <option value="monospace">Monospace</option>
+          </select>
+        </div>
+
+        <div class="control">
+          <label for="allCaps">
+            <span>All caps</span>
+            <input id="allCaps" type="checkbox">
+          </label>
+        </div>
+
+        <div class="formula">
+          <p>Size = base × ratio<sup>level</sup></p>
+          <p id="formulaOutput">1rem × 1.25<sup>3</sup> = 1.953rem</p>
+        </div>
+
+        <button class="reset-button" id="resetButton" type="button">
+          Reset settings
+        </button>
+      </aside>
+
+      <!-- LIVE PREVIEW -->
+
+      <div id="typeScale">
+
+        <!-- Uncomment these two rows if you want Hero and Display specimens.
+        <div class="type-row" data-level="6">
+          <div class="type-meta">
+            <strong>Hero</strong>
+            <span class="size-value"></span>
+            <br>+6 steps
+          </div>
+          <p class="type-sample">Make it count.</p>
+        </div>
+
+        <div class="type-row" data-level="5">
+          <div class="type-meta">
+            <strong>Display</strong>
+            <span class="size-value"></span>
+            <br>+5 steps
+          </div>
+          <p class="type-sample">Big ideas.</p>
+        </div>
+        -->
+
+        <div class="type-row" data-level="4">
+          <div class="type-meta">
+            <strong>H1</strong>
+            <span class="size-value"></span>
+            <br>+4 steps
+          </div>
+          <p class="type-sample">Make information clear</p>
+        </div>
+
+        <div class="type-row" data-level="3">
+          <div class="type-meta">
+            <strong>H2</strong>
+            <span class="size-value"></span>
+            <br>+3 steps
+          </div>
+          <p class="type-sample">Designing a visual hierarchy</p>
+        </div>
+
+        <div class="type-row" data-level="2">
+          <div class="type-meta">
+            <strong>H3</strong>
+            <span class="size-value"></span>
+            <br>+2 steps
+          </div>
+          <p class="type-sample">A section heading with more presence</p>
+        </div>
+
+        <div class="type-row" data-level="1">
+          <div class="type-meta">
+            <strong>H4</strong>
+            <span class="size-value"></span>
+            <br>+1 step
+          </div>
+          <p class="type-sample">A supporting section heading</p>
+        </div>
+
+        <div class="type-row" data-level="0">
+          <div class="type-meta">
+            <strong>Body</strong>
+            <span class="size-value"></span>
+            <br>Base size
+          </div>
+          <p class="type-sample">
+            The quick brown fox jumps over the lazy dog.
+          </p>
+        </div>
+
+        <div class="type-row" data-level="-1">
+          <div class="type-meta">
+            <strong>Small</strong>
+            <span class="size-value"></span>
+            <br>−1 step
+          </div>
+          <p class="type-sample">
+            Supporting text and secondary information
+          </p>
+        </div>
+
+        <div class="type-row" data-level="-2">
+          <div class="type-meta">
+            <strong>Caption</strong>
+            <span class="size-value"></span>
+            <br>−2 steps
+          </div>
+          <p class="type-sample">
+            Small labels, captions and metadata
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // ------------------------------
+    // 6. TYPE SCALE GENERATOR
+    // ------------------------------
+
+    const allCapsInput = document.querySelector("#allCaps");
+    const typeScale = document.querySelector("#typeScale");
+
+    const baseInput = document.querySelector("#baseSize");
+    const ratioInput = document.querySelector("#ratio");
+    const displayFontInput = document.querySelector("#displayFont");
+    const bodyFontInput = document.querySelector("#bodyFont");
+
+    const baseOutput = document.querySelector("#baseOutput");
+    const ratioOutput = document.querySelector("#ratioOutput");
+    const formulaOutput = document.querySelector("#formulaOutput");
+
+    const root = document.documentElement;
+
+    // Format a number for readable rem output.
+    function formatRem(value) {
+      return `${Number(value.toFixed(4))}rem`;
+    }
+
+    function formatRatio(value) {
+      return value.toFixed(3).replace(/0+$/, "").replace(/\.$/, "");
+    }
+
+    function updateTypeScale() {
+      const base = Number(baseInput.value);
+      const ratio = Number(ratioInput.value);
+
+      // Update global design tokens.
+      root.style.setProperty("--base-size", `${base}rem`);
+      root.style.setProperty("--scale-ratio", ratio);
+      root.style.setProperty("--font-display", displayFontInput.value);
+      root.style.setProperty("--font-body", bodyFontInput.value);
+
+      // Update control labels.
+      baseOutput.textContent = formatRem(base);
+      ratioOutput.textContent = formatRatio(ratio);
+
+      // Calculate and display each scale step in rem.
+      const rows = document.querySelectorAll(".type-row");
+
+      rows.forEach((row) => {
+        const level = Number(row.dataset.level);
+        const size = base * Math.pow(ratio, level);
+
+        row.querySelector(".size-value").textContent = formatRem(size);
+        row.querySelector(".type-sample").style.fontSize = formatRem(size);
+      });
+
+      // Show an example of the formula in rem.
+      const exampleLevel = 3;
+      const exampleSize = base * Math.pow(ratio, exampleLevel);
+
+      formulaOutput.innerHTML =
+        `${formatRem(base)} × ${formatRatio(ratio)}<sup>${exampleLevel}</sup> = ${formatRem(exampleSize)}`;
+    }
+
+    // Recalculate whenever a setting changes.
+    baseInput.addEventListener("input", updateTypeScale);
+    ratioInput.addEventListener("change", updateTypeScale);
+    displayFontInput.addEventListener("change", updateTypeScale);
+    bodyFontInput.addEventListener("change", updateTypeScale);
+
+    // Toggle uppercase styling on the specimens.
+    allCapsInput.addEventListener("change", () => {
+      typeScale.classList.toggle("all-caps", allCapsInput.checked);
+    });
+
+    // Restore the starting configuration.
+    document.querySelector("#resetButton").addEventListener("click", () => {
+      baseInput.value = "1";
+      ratioInput.value = "1.25";
+      displayFontInput.value = "Georgia, serif";
+      bodyFontInput.value = "Arial, sans-serif";
+      allCapsInput.checked = false;
+      typeScale.classList.remove("all-caps");
+
+      updateTypeScale();
+    });
+
+    // Initialize the preview.
+    updateTypeScale();
+  </script>
+</main>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/gallery-rows.js" defer></script>
+</body>
+</html>
