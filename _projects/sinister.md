@@ -3,9 +3,8 @@ layout: project
 title: "Sinister Paranormal Quarterly"
 description: "A mock magazine designed to give paranormal enthusiasts a more sophisticated reading experience."
 tags:
-  - "graphic-design"
-  - "editorial"
   - "print"
+  - "editorial"
 featured: true
 order: 3
 thumbnail: "/assets/images/sinister/sinister-00.webp"
@@ -67,4 +66,5 @@ gallery:
 ---
 
 A speculative magazine concept exploring paranormal phenomena through the lens of premium editorial publishing. Inspired by the visual language of National Geographic, the project pairs eerie subject matter with thoughtful typography, structured layouts, and an authoritative editorial aesthetic.
+editorial aesthetic.
 

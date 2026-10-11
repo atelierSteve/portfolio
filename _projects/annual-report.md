@@ -3,9 +3,8 @@ layout: project
 title: "Annual Report"
 description: "What if annual reports were cool and not lame?"
 tags:
-  - "graphic-design"
-  - "editorial"
   - "print"
+  - "editorial"
 featured: true
 order: 4
 thumbnail: "/assets/images/annual-report/annual-report-00.webp"
@@ -39,6 +38,9 @@ gallery:
       - image: "/assets/images/annual-report/annual-report-08.webp"
         alt: ""
       - image: "/assets/images/annual-report/annual-report-09.webp"
+        alt: ""
+---
+
         alt: ""
 ---
 

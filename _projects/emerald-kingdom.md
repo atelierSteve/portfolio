@@ -3,10 +3,9 @@ layout: project
 title: "Emerald Kingdom"
 description: "A tabletop RPG sourcebook inspired by the world of Oz."
 tags:
-  - "graphic-design"
+  - "print"
   - "editorial"
   - "tabletop"
-  - "print"
 featured: true
 order: 2
 thumbnail: "/assets/images/emerald-kingdom/emerald-kingdom-00.webp"
@@ -39,6 +38,9 @@ gallery:
         alt: "A spread from The Emerald Kingdom of Oz. It is a spread of NPCs with the Scarecrow and its statblock on the left page and the Lion and its statblock on the right page."
       - image: "/assets/images/emerald-kingdom/emerald-kingdom-05.webp"
         alt: "A page from The Emerald Kingdom of Oz. It is a page of Treasures with two treasure rolling tables."
+---
+
+testing testing
 ---
 
 testing testing

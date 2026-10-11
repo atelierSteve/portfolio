@@ -3,10 +3,8 @@ layout: project
 title: "Deck100"
 description: "A physical d100 and roleplaying game randomizer."
 tags:
-  - "graphic-design"
+  - "packaging"
   - "tabletop"
-  - "branding"
-  - "package-design"
 featured: true
 order: 1
 thumbnail: "/assets/images/deck100/deck100-00.webp"
@@ -41,6 +39,10 @@ gallery:
         alt: "A Deck100 card, result number 50."
       - image: "/assets/images/deck100/deck100-09.webp"
         alt: "A Deck100 card, result number 80."
+---
+
+testing testing
+ result number 80."
 ---
 
 testing testing
