@@ -3,6 +3,7 @@ layout: project
 title: "Deck100"
 description: "A physical d100 and roleplaying game randomizer."
 tags:
+  - "brand"
   - "package"
 featured: true
 order: 1

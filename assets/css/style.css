@@ -83,13 +83,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 h1 {
-  font-size: var(--text-h1);
+  font-size: clamp(2.4rem, 10.28vw, var(--text-h1));
+}
+
+h3 {
+  font-size: clamp(1.48rem, 6.35vw, var(--text-h3));
 }
 h2 {
   font-size: var(--text-h2);
-}
-h3 {
-  font-size: var(--text-h3);
 }
 h4 {
   font-size: var(--text-h4);
@@ -107,6 +108,7 @@ small,
 .text-small {
   font-size: var(--text-small);
 }
+
 /* ========================================
    4. PAGE LAYOUT
    ======================================== */
@@ -127,6 +129,11 @@ main {
   justify-content: center;
   padding-top: var(--page-gutter);
 }
+
+div.intro-headline {
+  --headline-scale: clamp(0.35, calc(100vw / 1200), 1);
+}
+
 .intro-headline {
   font-kerning: normal;
   display: flex;
@@ -353,11 +360,13 @@ h3.intro-headline {
 /* ========================================
    9. RESPONSIVE STYLES
    ======================================== */
-@media (max-width: 56.25rem) {
+/*
+   @media (max-width: 56.25rem) {
   .intro-headline {
     font-size: clamp(3.5rem, 10vw, 6.5rem);
   }
 }
+*/
 /* ========================================
    9.1. PORTFOLIO STICKY RESPONSIVE
    ======================================== */
@@ -383,11 +392,17 @@ h3.intro-headline {
     --page-gutter: 1.1rem;
   }
   .intro {
-    min-height: 65svh;
-    padding-block: 4rem;
+    min-height: 30svh;
+    padding: .3rem;
   }
-  .intro-headline {
-    font-size: clamp(3rem, 12vw, 4.75rem);
+
+  h1 {
+    font-size: 3em;
+  }
+  h3 {
+    font-size: 2em;
+  }
+ .intro-headline {
     line-height: 0.88;
     letter-spacing: -0.035em;
   }
