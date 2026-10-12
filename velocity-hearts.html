@@ -1,0 +1,115 @@
+<style>
+.velocity-hearts {
+  color: #f5f0f5;
+  background: #100d18 url("https://images.squarespace-cdn.com/content/671bfdbacb0db558ab2a5e61/1bcdcdab-1b87-4470-9f35-400b36be7507/starfield.png?content-type=image%2Fpng") center / cover fixed;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.velocity-hearts h2,
+.velocity-hearts h3,
+.velocity-hearts h4 { color: #e46fb4; font-family: Verdana, sans-serif; }
+.velocity-hearts section { padding: clamp(2rem, 6vw, 6rem) 1.25rem; }
+.velocity-hearts .vh-inner { width: min(100%, 1100px); margin-inline: auto; }
+.velocity-hearts .vh-hero { text-align: center; padding-top: 2rem; }
+.velocity-hearts .vh-key-art { display: block; width: min(100%, 1000px); max-height: 70vh; object-fit: contain; margin: 0 auto; }
+.velocity-hearts .vh-logo { display: block; width: min(75%, 620px); max-height: 220px; object-fit: contain; margin: 1rem auto; }
+.velocity-hearts .vh-tagline { max-width: 760px; margin: 1.5rem auto; font-size: clamp(1rem, 2vw, 1.3rem); line-height: 1.6; }
+.velocity-hearts .vh-release { color: #fff; margin: 1.5rem 0 .5rem; text-shadow: 0 0 10px #000; }
+.velocity-hearts .vh-platforms { display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.velocity-hearts .vh-platforms img { width: auto; height: 30px; }
+.velocity-hearts .vh-story { max-width: 800px; margin-inline: auto; font-size: 1.1rem; line-height: 1.8; }
+.velocity-hearts .vh-feature { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: clamp(1.5rem, 5vw, 4rem); }
+.velocity-hearts .vh-feature:nth-of-type(odd) .vh-feature-image { order: 2; }
+.velocity-hearts .vh-feature h3 { font-size: clamp(1.5rem, 3vw, 2.4rem); }
+.velocity-hearts .vh-feature p { font-size: 1.05rem; line-height: 1.7; }
+.velocity-hearts .vh-feature-image { display: block; width: 100%; height: auto; }
+.velocity-hearts .vh-characters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.velocity-hearts .vh-character { border: 1px solid #e46fb4; min-width: 0; }
+.velocity-hearts .vh-character img { display: block; width: 100%; height: 220px; object-fit: cover; object-position: center; }
+.velocity-hearts .vh-character h4,
+.velocity-hearts .vh-character p { margin: 0; padding: .75rem; }
+.velocity-hearts .vh-character h4 { font-size: 1.2rem; }
+.velocity-hearts .vh-character p { line-height: 1.5; }
+.velocity-hearts .vh-cta { display: block; border: 1px solid #e46fb4; padding: 1.25rem; margin: 1.5rem auto; text-align: center; color: inherit; text-decoration: none; transition: background-color .2s ease; }
+.velocity-hearts .vh-cta:hover { background: rgba(89, 44, 71, .5); }
+.velocity-hearts .vh-credits { display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.velocity-hearts .vh-credits img { max-width: 180px; max-height: 100px; object-fit: contain; }
+.velocity-hearts .vh-disclaimer { max-width: 800px; margin-inline: auto; font-size: .9rem; line-height: 1.6; opacity: .8; }
+@media (max-width: 700px) {
+  .velocity-hearts { background-attachment: scroll; }
+  .velocity-hearts .vh-feature { grid-template-columns: 1fr; }
+  .velocity-hearts .vh-feature:nth-of-type(odd) .vh-feature-image { order: initial; }
+  .velocity-hearts .vh-characters { grid-template-columns: 1fr; }
+  .velocity-hearts .vh-character { display: grid; grid-template-columns: minmax(100px, 35%) 1fr; align-items: start; }
+  .velocity-hearts .vh-character img { height: 100%; min-height: 150px; }
+  .velocity-hearts .vh-character h4 { padding-bottom: .25rem; }
+}
+</style>
+
+<div class="velocity-hearts">
+  <section class="vh-hero">
+    <div class="vh-inner">
+      <img class="vh-key-art" src="https://images.squarespace-cdn.com/content/v1/671bfdbacb0db558ab2a5e61/8cf5171a-3292-420b-a7fb-b11de02ca30b/darkest2trans.png" alt="Velocity Hearts key art">
+      <img class="vh-logo" src="https://images.squarespace-cdn.com/content/v1/671bfdbacb0db558ab2a5e61/14fb19fd-ddf8-4bb4-b969-f8be4de03309/vhlogo.png" alt="Velocity Hearts">
+      <p class="vh-tagline">Take to the skies, forge unbreakable bonds, and face humanity's darkest fears in a high-speed action adventure where relationships are your greatest power.</p>
+      <h3 class="vh-release">Fall 2027</h3>
+      <div class="vh-platforms" aria-label="Platforms">
+        <img src="https://images.squarespace-cdn.com/content/671bfdbacb0db558ab2a5e61/c4de4b12-1fde-436c-ad92-31dc1f9f8ecd/ps5logo.png?content-type=image%2Fpng" alt="PlayStation 5">
+        <img src="https://images.squarespace-cdn.com/content/671bfdbacb0db558ab2a5e61/8d41acb0-5883-4953-8759-8f94248719d7/switch2logo.png?content-type=image%2Fpng" alt="Nintendo Switch 2">
+      </div>
+    </div>
+  </section>
+
+  <section class="vh-story-section">
+    <div class="vh-inner">
+      <p class="vh-story">In the year 30XX, a fractured Earth faces a new apocalypse. As the boundary between the psychic and physical worlds collapses, humanity's nightmares emerge as terrifying invaders. Recruited into the elite Velocity Hearts Academy, you'll pilot advanced starfighters, forge lasting relationships, and uncover the truth behind a war that threatens reality itself.</p>
+      <a class="vh-cta" href="#join"><strong>Join the Crew</strong> — Sign up today and be the first to know when preorders go live.</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="vh-inner">
+      <article class="vh-feature">
+        <img class="vh-feature-image" src="https://images.squarespace-cdn.com/content/v1/671bfdbacb0db558ab2a5e61/dcaa1e37-0ae4-427b-ba4f-548e7411cc84/screen1.png" alt="Gameplay screenshot showing relationship-building">
+        <div><h3>Grow Your Bonds</h3><p>Spend time between missions getting to know your fellow pilots through story events, choices, and shared experiences. Every relationship deepens your connection to your squad.</p></div>
+      </article>
+      <article class="vh-feature">
+        <img class="vh-feature-image" src="https://images.squarespace-cdn.com/content/v1/671bfdbacb0db558ab2a5e61/dcd1f99b-d6d9-4082-b5b4-474cbbcf932a/screen2.png" alt="Gameplay screenshot showing character progression">
+        <div><h3>Unlock Your Potential</h3><p>Stronger bonds unlock new combat techniques, passive bonuses, and powerful abilities unique to each pilot. Every relationship opens new paths through your skill tree.</p></div>
+      </article>
+      <article class="vh-feature">
+        <img class="vh-feature-image" src="https://images.squarespace-cdn.com/content/v1/671bfdbacb0db558ab2a5e61/0c2c7383-d9c5-4098-be73-c390ca122a23/screen3.png" alt="Gameplay screenshot showing squad combat">
+        <div><h3>Fight Together</h3><p>Bring your closest allies into battle as AI partners, combining your unique abilities into devastating coordinated attacks against humanity's nightmares.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="vh-inner">
+      <h3>Meet the Squad</h3>
+      <div class="vh-characters">
+        <article class="vh-character"><img src="https://images.squarespace-cdn.com/content/671bfdbacb0db558ab2a5e61/2798dd8d-eef0-47e8-b778-d815fef28b20/portrait4.png?content-type=image%2Fpng" alt="Ciel Arden"><div><h4>Ciel Arden</h4><p>A razor-sharp strategist with a clever answer for everything.</p></div></article>
+        <article class="vh-character"><img src="https://images.squarespace-cdn.com/content/671bfdbacb0db558ab2a5e61/d85b205d-eac8-4313-ba05-545678cc1459/portrait5.png?content-type=image%2Fpng" alt="Ren Zephyr"><div><h4>Ren Zephyr</h4><p>A composed leader whose quiet confidence inspires the entire squadron.</p></div></article>
+        <article class="vh-character"><img src="https://images.squarespace-cdn.com/content/671bfdbacb0db558ab2a5e61/a45f245b-39a5-4cce-a333-66094ca2a461/portrait2.png?content-type=image%2Fpng" alt="Rowan Lux"><div><h4>Rowan Lux</h4><p>The academy's youngest recruit, determined to prove age is just a number.</p></div></article>
+        <article class="vh-character"><img src="https://images.squarespace-cdn.com/content/671bfdbacb0db558ab2a5e61/783b40c5-b418-4acd-8066-4b5e661e3d7e/portait1.png?content-type=image%2Fpng" alt="Quin Soren"><div><h4>Quin Soren</h4><p>An unpredictable free spirit who turns every mission into an adventure.</p></div></article>
+        <article class="vh-character"><img src="https://images.squarespace-cdn.com/content/671bfdbacb0db558ab2a5e61/0799beb1-24d5-444c-be3f-b39a75cf919f/portrait6.png?content-type=image%2Fpng" alt="Ash Kestrel"><div><h4>Ash Kestrel</h4><p>Soft-spoken and observant, with unwavering resolve when it matters most.</p></div></article>
+        <article class="vh-character"><img src="https://images.squarespace-cdn.com/content/671bfdbacb0db558ab2a5e61/be0d77bb-92e0-429e-9bee-cd60acabd029/portrait3.png?content-type=image%2Fpng" alt="Ari Vesper"><div><h4>Ari Vesper</h4><p>A fearless ace whose confidence is matched only by their ambition.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="vh-inner">
+      <a class="vh-cta" href="#join"><strong>Defend the Earth</strong> — Sign up today and be the first to know when preorders go live.</a>
+      <div class="vh-credits">
+        <img src="https://images.squarespace-cdn.com/content/v1/671bfdbacb0db558ab2a5e61/9e1209a7-5e7e-44a7-ac51-636f3eb4e09c/ratedt.jpg" alt="ESRB Teen rating">
+        <img src="https://images.squarespace-cdn.com/content/v1/671bfdbacb0db558ab2a5e61/1882302a-9e5d-4ca2-b034-8272cad92c95/ateliersteve.png" alt="Atelier Steve logo">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="vh-inner">
+      <p class="vh-disclaimer">This concept project uses AI-generated key art and logo concepts as stand-ins for client-supplied creative assets. The focus of the work is the original marketing website design, user experience, content strategy, and front-end implementation.</p>
+    </div>
+  </section>
+</div>
