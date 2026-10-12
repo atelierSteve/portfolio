@@ -400,7 +400,7 @@ h3.intro-headline {
     font-size: 3em;
   }
   h3 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
  .intro-headline {
     line-height: 0.88;
@@ -419,11 +419,11 @@ h3.intro-headline {
     font-size: 1.25rem;
   }
   .tag-nav {
-    flex: 1 1 0;
-    flex-wrap: nowrap;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
     min-width: 0;
     gap: 0.4rem;
-    overflow-x: auto;
+    overflow-x: visible;
     overscroll-behavior-x: contain;
     scrollbar-width: none;
     padding-block: 0rem 1rem;
