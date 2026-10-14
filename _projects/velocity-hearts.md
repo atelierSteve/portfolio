@@ -2,7 +2,7 @@
 layout: project
 title: "Velocity Hearts"
 description: "A mock landing page for a fictional game, using AI-generated assets to simulate a real-world game marketing brief."
-with-link: "vh-page"
+with-link: "vh-page.html"
 tags:
   - "digital"
   - "marketing"
