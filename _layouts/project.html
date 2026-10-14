@@ -36,7 +36,7 @@ layout: default
   </div>
 
 {% if page.with-link %}
-  <a class="project-link" href="{{ page.with-link | escape }}" target="_blank" rel="noopener noreferrer">
+  <a class="project-link" href="{{ page.with-link | relative_url | escape }}" target="_blank" rel="noopener noreferrer">
     View Page →
   </a>
 {% endif %}
