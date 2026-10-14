@@ -5,7 +5,7 @@ description: "An ecommerce site for automotive accessories and utilities such as
 tags:
   - "brand"
   - "digital"
-featured: false
+featured: true
 order: 18
 thumbnail: "/assets/images/ultima-site/ultima-site-00.webp"
 gallery:

@@ -5,7 +5,7 @@ description: "A website for an urgent care specializing in eye care."
 tags:
   - "brand"
   - "digital"
-featured: false
+featured: true
 order: 11
 thumbnail: "/assets/images/eyecare-now/eyecare-now-00.webp"
 gallery:

@@ -4,7 +4,7 @@ title: "Creation of Bob"
 description: "It’s like if Michelangelo did Bob’s Burgers. Well, more like Bob’s Burgers did Michelangelo."
 tags:
   - "illustration"
-featured: false
+featured: true
 order: 24
 thumbnail: "/assets/images/illustrations/creation-of-bob.webp"
 gallery:

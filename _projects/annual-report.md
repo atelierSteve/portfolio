@@ -5,7 +5,7 @@ description: "What if annual reports were cool and not lame?"
 tags:
   - "print"
   - "editorial"
-featured: true
+featured: false
 order: 4
 thumbnail: "/assets/images/annual-report/annual-report-00.webp"
 gallery:

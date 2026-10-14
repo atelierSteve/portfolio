@@ -5,7 +5,7 @@ description: "A brochure for utility beacons used primarily for workplace safety
 tags:
   - "print"
   - "marketing"
-featured: false
+featured: true
 order: 7
 thumbnail: "/assets/images/bwi-beacon-brochure/bwi-beacon-brochure-00.webp"
 gallery:

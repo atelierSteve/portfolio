@@ -5,7 +5,7 @@ description: "A mock magazine designed to give paranormal enthusiasts a more sop
 tags:
   - "print"
   - "editorial"
-featured: true
+featured: false
 order: 3
 thumbnail: "/assets/images/sinister/sinister-00.webp"
 gallery:

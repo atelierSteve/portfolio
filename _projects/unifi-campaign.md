@@ -7,7 +7,7 @@ tags:
   - "digital"
   - "print"
   - "marketing"
-featured: false
+featured: true
 order: 20
 thumbnail: "/assets/images/unifi-campaign/unifi-campaign-00.webp"
 gallery:

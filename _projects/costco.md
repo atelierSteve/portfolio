@@ -5,7 +5,7 @@ description: "Promotional e-commerce marketing material from a seasonal contract
 tags:
   - "digital"
   - "marketing"
-featured: false
+featured: true
 order: 8
 thumbnail: "/assets/images/costco/costco-00.webp"
 gallery:
