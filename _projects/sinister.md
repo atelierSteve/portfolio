@@ -65,4 +65,4 @@ gallery:
         alt: ""
 ---
 
-A speculative magazine concept exploring paranormal phenomena through the lens of premium editorial publishing. Inspired by the visual language of National Geographic, the project pairs eerie subject matter with thoughtful typography, structured layouts, and an authoritative editorial aesthetic.
+testing testing

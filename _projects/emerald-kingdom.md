@@ -39,4 +39,4 @@ gallery:
         alt: "A page from The Emerald Kingdom of Oz. It is a page of Treasures with two treasure rolling tables."
 ---
 
-testing testing
+Disclosure - illustrations for Emerald Kingdom are public domain from the first publication of Wizard of Oz by WW Denslow and copy generated with AI to avoid distracting filler text, if I ever revisit this as a game design project I'll write everything by hand, these are to simulate being provided assets/copy for an editorial project.
