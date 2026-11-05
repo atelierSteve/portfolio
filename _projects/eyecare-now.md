@@ -36,5 +36,3 @@ gallery:
       - image: "/assets/images/eyecare-now/eyecare-now-08.webp"
         alt: ""
 ---
-
-testing testing

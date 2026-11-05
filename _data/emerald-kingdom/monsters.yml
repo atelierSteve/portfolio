@@ -1,0 +1,192 @@
+the-wise-scarecrow:
+  name: "The Wise Scarecrow"
+  epithet: "Medium humanoid, neutral good"
+  ac: "13 (natural armor)"
+  initiative: "3"
+  hp: "27 (5d8 + 5)"
+  speed: "30 ft."
+  stats:
+    str: { val: 12, mod: "+1", save: "+1" }
+    int: { val: 16, mod: "+3", save: "+5" }
+    dex: { val: 14, mod: "+2", save: "+2" }
+    wis: { val: 14, mod: "+2", save: "+4" }
+    con: { val: 12, mod: "+1", save: "+1" }
+    cha: { val: 12, mod: "+1", save: "+1" }
+  features:
+    - name: "Clever Solution"
+      desc: "Once per turn, when the Scarecrow makes an ability check, he can add 1d4 to the result after seeing the roll."
+    - name: "Straw Body"
+      desc: "The Scarecrow has advantage on saving throws against being grappled or restrained."
+  actions:
+    - name: "Improvised Weapon"
+      type: "Melee Weapon Attack"
+      bonus: "+3"
+      detail: "to hit, reach 5 ft., one target."
+      hit: "8 (1d8 + 4) piercing damage."
+    - name: "Outthink"
+      detail: "The Scarecrow chooses one creature within 30 feet that can hear him. The target must succeed on a DC 13 Wisdom saving throw or have disadvantage on its next attack roll before the end of its next turn."
+  meta_lines:
+    - label: "Skills"
+      text: "Investigation +5, Perception +4, Persuasion +3"
+    - label: "Vulnerabilities"
+      text: "Fire"
+    - label: "Sense"
+      text: "passive Perception 14"
+    - label: "Languages"
+      text: "Common, one additional language"
+    - label: "Challenge"
+      text: "1 (200 XP)"
+
+the-brave-lion:
+  name: "The Brave Lion"
+  epithet: "Large beast, neutral good"
+  ac: "13"
+  initiative: "-1"
+  hp: "45 (6d10 + 12)"
+  speed: "40 ft."
+  stats:
+    str: { val: 18, mod: "+4", save: "+4" }
+    int: { val: 8, mod: "-1", save: "-1" }
+    dex: { val: 14, mod: "+2", save: "+2" }
+    wis: { val: 13, mod: "+1", save: "+1" }
+    con: { val: 15, mod: "+2", save: "+4" }
+    cha: { val: 12, mod: "+1", save: "+3" }
+  features:
+    - name: "Courage in Crisis"
+      desc: "The Lion has advantage on saving throws against being frightened while an ally is within 30 feet."
+    - name: "Protective Roar"
+      desc: "When a creature within 5 feet of the Lion is hit by an attack, the Lion can use his reaction to impose disadvantage on that attack roll."
+  actions:
+    - name: "Multiattack"
+      detail: "The Lion makes one Bite and one Claw attack."
+    - name: "Bite"
+      type: "Melee Weapon Attack"
+      bonus: "6"
+      detail: "to hit, reach 5 ft., one target."
+      hit: "8 (1d8 + 4) piercing damage."
+    - name: "Claw"
+      type: "Melee Weapon Attack"
+      bonus: "6"
+      detail: "to hit, reach 5 ft., one target."
+      hit: "7 (1d6 + 4) slashing damage."
+    - name: "Terrifying Roar (Recharge 5–6)"
+      detail: "Each creature of the Lion’s choice within 15 feet must succeed on a DC 13 Wisdom saving throw or be frightened until the end of the Lion’s next turn."
+  meta_lines:
+    - label: "Skills"
+      text: "Athletics +6, Perception +3"
+    - label: "Sense"
+      text: "passive Perception 13"
+    - label: "Languages"
+      text: "Common"
+    - label: "Challenge"
+      text: "2 (450 XP)"
+
+the-great-and-powerful-oz:
+  name: "The Great and Powerful Oz"
+  epithet: "Medium humanoid, neutral"
+  ac: "12"
+  initiative: "3"
+  hp: "38 (7d8 + 7)"
+  speed: "30 ft."
+  stats:
+    str: { val: 8, mod: "-1", save: "-1" }
+    int: { val: 16, mod: "+3", save: "+3" }
+    dex: { val: 12, mod: "+1", save: "+1" }
+    wis: { val: 14, mod: "+2", save: "+2" }
+    con: { val: 12, mod: "+1", save: "+1" }
+    cha: { val: 18, mod: "+4", save: "+4" }
+  features:
+    - name: "Great and Powerful"
+      desc: "Oz has advantage on Charisma (Deception) checks made to convince a creature that he possesses greater magical power than he actually does."
+    - name: "Illusory Wizardry"
+      desc: "Oz can cast Minor Illusion at will and Disguise Self three times per day."
+  actions:
+    - name: "Commanding Voice"
+      detail: "One creature Oz can see within 60 feet must succeed on a DC 14 Wisdom saving throw or be charmed until the end of Oz’s next turn."
+    - name: "Thunderous Display (Recharge 5–6)"
+      detail: "Each creature in a 15-foot cone must make a DC 14 Dexterity saving throw, taking 10 (3d6) thunder damage on a failed save, or half as much on a success."
+    - name: "Escape Behind the Curtain (1/Day)"
+      detail: "Oz becomes invisible until the end of his next turn and can move up to his speed without provoking opportunity attacks."
+  meta_lines:
+    - label: "Skills"
+      text: "Deception +6, Insight +4, Persuasion +6"
+    - label: "Sense"
+      text: "passive Perception 12"
+    - label: "Languages"
+      text: "Common, Draconic"
+    - label: "Challenge"
+      text: "3 (700 XP)"
+
+flying-monkey:
+  name: "Flying Monkey"
+  epithet: "Medium beast, chaotic neutral"
+  ac: "13"
+  initiative: "-2"
+  hp: "11 (2d8 + 2)"
+  speed: "30 ft., climb 30 ft., fly 40 ft."
+  stats:
+    str: { val: 10, mod: "+0", save: "+0" }
+    int: { val: 6, mod: "-2", save: "-2" }
+    dex: { val: 16, mod: "+3", save: "+5" }
+    wis: { val: 12, mod: "+1", save: "+1" }
+    con: { val: 12, mod: "+1", save: "+1" }
+    cha: { val: 8, mod: "-1", save: "+1" }
+  features:
+    - name: "Flyby"
+      desc: "The Monkey doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+  actions:
+    - name: "Bite"
+      type: "Melee Weapon Attack"
+      bonus: "+5"
+      detail: "to hit, reach 5 ft., one target."
+      hit: "5 (1d4 + 3) piercing damage."
+    - name: "Claws"
+      type: "Melee Weapon Attack"
+      bonus: "5"
+      detail: "to hit, reach 5 ft., one target."
+      hit: "6 (1d6 + 3) slashing damage."
+  meta_lines:
+    - label: "Skills"
+      text: "Acrobatics +5, Perception +3"
+    - label: "Sense"
+      text: "passive Perception 13"
+    - label: "Languages"
+      text: "understands Common but cannot speak"
+    - label: "Challenge"
+      text: "1/4 (50 XP)"
+
+hammer-head:
+  name: "Hammer-Head"
+  epithet: "Medium monstrosity, unaligned"
+  ac: "14"
+  initiative: "-3"
+  hp: "30 (4d8 + 12)"
+  speed: "30 ft., climb 30 ft., fly 40 ft."
+  stats:
+    str: { val: 16, mod: "+3", save: "+5" }
+    int: { val: 4, mod: "-3", save: "-3" }
+    dex: { val: 10, mod: "+0", save: "+0" }
+    wis: { val: 10, mod: "+0", save: "+0" }
+    con: { val: 16, mod: "+3", save: "+5" }
+    cha: { val: 5, mod: "-2", save: "-2" }
+  features:
+    - name: "Unyielding Neck"
+      desc: "The Hammer-Head has advantage on saving throws against being knocked prone or moved against its will."
+  actions:
+    - name: "Headbutt"
+      type: "Melee Weapon Attack"
+      bonus: "+5"
+      detail: "to hit, reach 5 ft., one target."
+      hit: "8 (1d10 + 3) bludgeoning damage."
+    - name: "Extend Neck"
+      detail: "The Hammer-Head extends its neck up to 20 feet and makes a Headbutt attack. On a hit, the target must succeed on a DC 13 Strength saving throw or be pushed 10 feet."
+  meta_lines:
+    - label: "Resistances"
+      text: "bludgeoning, piercing, and slashing from nonmagical attacks"
+    - label: "Sense"
+      text: "passive Perception 10"
+    - label: "Languages"
+      text: "understands Common but cannot speak"
+    - label: "Challenge"
+      text: "1 (200 XP)"
+

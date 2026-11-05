@@ -42,5 +42,3 @@ gallery:
       - image: "/assets/images/unifi-campaign/unifi-campaign-09.webp"
         alt: ""
 ---
-
-testing testing

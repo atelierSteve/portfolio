@@ -13,5 +13,3 @@ gallery:
       - image: "/assets/images/illustrations/courage-souls.webp"
         alt: ""
 ---
-
-testing testing

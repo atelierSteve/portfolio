@@ -64,5 +64,3 @@ gallery:
       - image: "/assets/images/sinister/sinister-19.webp"
         alt: ""
 ---
-
-testing testing

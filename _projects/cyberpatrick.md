@@ -13,5 +13,3 @@ gallery:
       - image: "/assets/images/illustrations/cyberpatrick.webp"
         alt: ""
 ---
-
-testing testing

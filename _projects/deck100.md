@@ -40,5 +40,3 @@ gallery:
       - image: "/assets/images/deck100/deck100-09.webp"
         alt: "A Deck100 card, result number 80."
 ---
-
-testing testing

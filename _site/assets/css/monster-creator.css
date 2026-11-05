@@ -1,0 +1,149 @@
+.monster-tool {
+  --mc-ink: #20251f;
+  --mc-muted: #687067;
+  --mc-line: #d9ded5;
+  --mc-paper: #fff;
+  --mc-soft: #f4f6f1;
+  --mc-accent: #365b43;
+  max-width: 1000px;
+  margin: 2rem auto 5rem;
+  padding: 0 1.25rem;
+  color: var(--mc-ink);
+}
+.monster-tool * { box-sizing: border-box; }
+.monster-tool__header { margin-bottom: 2rem; }
+.monster-tool__header h1 { margin: .15rem 0 .65rem; line-height: 1.1; }
+.monster-tool__header > p:last-child { max-width: 680px; }
+.monster-eyebrow {
+  margin: 0 0 .5rem;
+  color: var(--mc-accent);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+.monster-panel {
+  margin: 1.25rem 0;
+  padding: clamp(1rem, 3vw, 1.75rem);
+  border: 1px solid var(--mc-line);
+  border-radius: 14px;
+  background: var(--mc-paper);
+}
+.monster-panel h2 { margin-top: 0; }
+.monster-panel h3 { margin-top: 0; }
+.monster-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.monster-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: .4rem;
+  font-weight: 650;
+  font-size: .92rem;
+}
+.monster-field--wide { grid-column: 1 / -1; }
+.monster-tool input,
+.monster-tool select {
+  width: 100%;
+  min-height: 44px;
+  padding: .65rem .75rem;
+  border: 1px solid #c8cec4;
+  border-radius: 7px;
+  background: var(--mc-paper);
+  color: inherit;
+  font: inherit;
+}
+.monster-tool input:focus,
+.monster-tool select:focus {
+  outline: 2px solid var(--mc-accent);
+  outline-offset: 2px;
+}
+.monster-muted { color: var(--mc-muted); font-size: .9rem; line-height: 1.55; }
+.monster-divider { margin: 1.75rem 0; border-top: 1px solid var(--mc-line); }
+.monster-ability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75rem;
+  margin-top: 1rem;
+}
+.monster-ability {
+  padding: .85rem;
+  border: 1px solid var(--mc-line);
+  border-radius: 9px;
+  background: var(--mc-soft);
+}
+.monster-ability strong { display: block; margin-bottom: .35rem; }
+.monster-ability small { display: block; margin-top: .3rem; color: var(--mc-muted); }
+.monster-point-count { font-weight: 750; }
+.monster-button {
+  min-height: 46px;
+  padding: .75rem 1.2rem;
+  border: 1px solid var(--mc-accent);
+  border-radius: 8px;
+  background: var(--mc-accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+.monster-button:disabled { opacity: .6; cursor: wait; }
+.monster-button--secondary { background: transparent; color: var(--mc-accent); }
+.monster-status { min-height: 1.5rem; margin-bottom: 0; color: var(--mc-muted); }
+.monster-status[data-error="true"] { color: #a12626; }
+.monster-results { margin-top: 2.5rem; }
+.monster-results__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.monster-results__heading h2 { margin: 0; }
+.monster-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .75rem;
+  margin: 1rem 0;
+}
+.monster-stat {
+  padding: 1rem;
+  border: 1px solid var(--mc-line);
+  border-radius: 10px;
+  background: var(--mc-soft);
+}
+.monster-stat span { display: block; color: var(--mc-muted); font-size: .8rem; }
+.monster-stat strong { display: block; margin-top: .25rem; font-size: 1.5rem; }
+.monster-result-abilities {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: .5rem;
+}
+.monster-result-ability {
+  padding: .7rem .3rem;
+  border: 1px solid var(--mc-line);
+  border-radius: 8px;
+  text-align: center;
+}
+.monster-result-ability strong,
+.monster-result-ability span { display: block; }
+.monster-result-ability span { margin-top: .25rem; color: var(--mc-muted); }
+.monster-damage { font-size: 1.25rem; font-weight: 800; }
+.monster-table-wrap { overflow-x: auto; }
+.monster-table { width: 100%; border-collapse: collapse; }
+.monster-table th, .monster-table td {
+  padding: .7rem;
+  border-bottom: 1px solid var(--mc-line);
+  text-align: left;
+  white-space: nowrap;
+}
+.monster-footer { margin-top: 2rem; color: var(--mc-muted); font-size: .8rem; }
+@media (max-width: 600px) {
+  .monster-form-grid { grid-template-columns: 1fr; }
+  .monster-field--wide { grid-column: auto; }
+  .monster-ability-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .monster-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .monster-result-abilities { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .monster-results__heading { align-items: flex-start; flex-direction: column; }
+}

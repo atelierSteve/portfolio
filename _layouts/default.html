@@ -17,5 +17,9 @@
 
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/gallery-rows.js' | relative_url }}" defer></script>
+  {% if jekyll.environment == "development" %}
+    <script src="http://127.0.0.1:35729/livereload.js?snipver=1"></script>
+  {% endif %}
+
 </body>
 </html>

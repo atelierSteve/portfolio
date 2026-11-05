@@ -23,5 +23,3 @@ gallery:
       - image: "/assets/images/statues/pizzaface-04.webp"
         alt: ""
 ---
-
-testing testing

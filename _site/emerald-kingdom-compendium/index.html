@@ -1,0 +1,2242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emerald Kingdom Compendium</title>
+  <meta name="description" content="A portfolio of design, digital content, and creative projects.">
+ 
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+
+    <style>
+        :root {
+            --palecream: #F0E1D0;
+            --gold: #F2AF0D;
+            --emerald: #226334;
+            --midemerald: rgba(34, 99, 52, 0.6);
+            --lightemerald: #ACC99F;
+            --radius: 30px; /* Size of the inward curve */
+            --border-width: 4px; /* Border thickness */
+            --border-color:; /* White circles/border color */
+            --card-bg: var(--lightemerald); /* Your blue color */
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'EB Garamond', serif;
+            font-variant: small-caps;
+            margin: 0 0 0.3em 0 !important;
+        }
+
+        h1, h2, h3 {
+            border-bottom: 2px solid var(--gold);
+            line-height: 2.5rem;
+        }
+
+        h1 {
+            color: var(--emerald);
+            font-size: 30pt;
+            padding-bottom: 0.2rem;
+            line-height: 2.1rem;
+            margin: 0 0 0.3em 0 !important;
+        }
+
+        h2 {
+            padding-bottom: 0rem;
+            line-height: 1.5rem;
+            margin: 0 0 0em 0 !important;
+        }
+
+        h3 {
+            padding-bottom: 0rem;
+            line-height: 1.5rem;
+            margin: 0.5em 0 0.3em 0 !important;
+        }
+
+        h4 {
+            line-height: 1em;
+            padding-bottom: 0em;
+            margin-bottom: 0em;
+            margin-top: 1.5em;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        h3.noborder {
+            border-bottom: none !important;
+            margin: 0 0 0 !important;
+            padding: 0;
+        }
+
+        h3.nomargin {
+            margin: 0 0 0.3em 0 !important;
+            padding: 0;
+        }
+
+        .noborder:first-of-type {
+            border-bottom: none !important;
+            margin: 0em !important;
+            padding: 0;
+        }
+
+        h3 + p {
+            margin-top: 0em;
+        }
+
+        h2 + p {
+            margin-top: 0.3em;
+        }
+
+        h4 + p {
+            margin-top: 0em;
+        }
+
+        th {
+            font-family: 'pt sans', sans-serif;
+            text-align: left;
+        }
+
+        td.shifted,
+        th.shifted {
+            padding-left: 3em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: none;
+        }
+
+        /* Keep the d10 column narrow and let the description use the remaining width. */
+        .roll-table {
+            table-layout: fixed;
+        }
+
+        .roll-table col:first-child {
+            width: 3em;
+        }
+
+        th,
+        td {
+            border: none;
+            padding: 0 0 0 .3em;
+        }
+
+        tr:nth-of-type(even) {
+            background-color: var(--lightemerald);
+        }
+
+        tr:hover {
+            background-color: var(--midemerald);
+        }
+
+        #aside1 p {
+            margin: 0;
+        }
+
+        .inverted-card h3 {
+            font-family: 'pt sans', sans-serif;
+        }
+
+        .inverted-card {
+            position: relative;
+            width: 100%;
+            padding: 2em;
+            box-sizing: border-box;
+            color:;
+            font-family: 'PT Sans', sans-serif;
+
+            /* Create the inward-curved background shape cleanly */
+            background-image:
+                radial-gradient(circle var(--radius) at 0 0, #0000 99%, var(--card-bg) 100%),
+                radial-gradient(circle var(--radius) at 100% 0, #0000 99%, var(--card-bg) 100%),
+                radial-gradient(circle var(--radius) at 0 100%, #0000 99%, var(--card-bg) 100%),
+                radial-gradient(circle var(--radius) at 100% 100%, #0000 99%, var(--card-bg) 100%);
+
+            /* Position one gradient in each of the four corners */
+            background-position: top left, top right, bottom left, bottom right;
+            background-size: 51% 51%;
+            background-repeat: no-repeat;
+        }
+
+        /* The Border Layer */
+        .inverted-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+
+            /* Draw a matching inward curve line just for the border */
+            background-image:
+                radial-gradient(circle calc(var(--radius) + var(--border-width)/2) at 0 0, #0000 93%, var(--border-color) 95%, var(--border-color) 100%),
+                radial-gradient(circle calc(var(--radius) + var(--border-width)/2) at 100% 0, #0000 93%, var(--border-color) 95%, var(--border-color) 100%),
+                radial-gradient(circle calc(var(--radius) + var(--border-width)/2) at 0 100%, #0000 93%, var(--border-color) 95%, var(--border-color) 100%),
+                radial-gradient(circle calc(var(--radius) + var(--border-width)/2) at 100% 100%, #0000 93%, var(--border-color) 95%, var(--border-color) 100%);
+
+            background-position: top left, top right, bottom left, bottom right;
+            background-size: 51% 51%;
+            background-repeat: no-repeat;
+        }
+    </style>
+
+    <article style="margin: 0 clamp(10%, 15%, 25%);">
+        <section id="welcome-to-the-emerald-kingdom">
+            <h1>
+                Welcome to the Emerald Kingdom
+            </h1>
+            <img style="display: block; margin: auto;" src="/assets/images/emerald-kingdom/web/intro.webp" width="800">
+            <aside style="margin: 2em; font-style:italic;">
+                “Oz is a land of enchantment, where witches and wizards, good and bad, live and work.”
+            </aside>
+            <p>
+                Quisque facilisis, justo quis pulvinar commodo, lectus neque ullamcorper massa, sed faucibus erat nulla a sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; integer posuere, lectus a malesuada porttitor, arcu mauris ultrices augue, sed dignissim nibh lorem in velit. Nam vitae nibh non lectus malesuada tempor. Donec commodo turpis ac neque blandit, id tincidunt magna finibus. Sed vitae nunc sed mi cursus ultricies.
+            </p>
+            <p>
+                Praesent varius interdum justo, at eleifend ipsum aliquet sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean malesuada purus at augue volutpat, non pretium metus efficitur. Nulla facilisi; curabitur euismod sapien nec turpis feugiat, quis pulvinar velit volutpat.
+            </p>
+            <p>
+                Aliquam erat volutpat. Donec euismod, risus sed bibendum placerat, sem nisi dictum nulla, sit amet viverra lacus justo id neque. Maecenas pharetra ligula id massa cursus, sed gravida tellus tincidunt. Integer feugiat, ipsum a congue faucibus, sapien justo consequat est, vitae posuere nibh enim non nibh.
+            </p>
+            <p>
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum, sed posuere consectetur est at lobortis.
+            </p>
+            <p>
+                Phasellus sodales, pede dapibus rhoncus dignissim, justo turpis ornare felis, in imperdiet pede metus quis tellus. Proin imperdiet, quam a gravida pulvinar, est sem faucibus felis, sit amet consequat pede turpis id ante. In facilisis sodales arcu. Mauris tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.
+            </p>
+        </section>
+
+        <section id="beyond-the-desert">
+            <h3>
+                Beyond the Desert
+            </h3>
+            <p>
+                Quisque porttitor, lorem in volutpat elementum, neque sapien tincidunt lectus, vitae congue augue mauris id felis. Vivamus finibus erat sed purus vulputate, in aliquam ipsum porta. Curabitur malesuada est at nisl dictum, quis interdum libero tempor. Donec euismod, lacus a malesuada blandit, risus turpis tincidunt urna, a congue neque lorem vel mi.
+            </p>
+            <p>
+                Proin ullamcorper sem sed nulla dignissim, sed pellentesque ipsum luctus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec id nisl. Aliquam erat volutpat. Integer fringilla. Duis lobortis, quam non volutpat suscipit, magna sem consequat libero, ac hendrerit urna ante id mi. Quisque commodo facilisis tellus. Integer sodales lorem sed nisl. Morbi consectetuer mauris quis odio. Ut dolor
+            </p>
+        </section>
+
+        <section id="the-emerald-kingdom">
+            <h2>
+                The Emerald Kingdom
+            </h2>
+            <p>
+                Maecenas non lectus vitae urna fermentum sagittis. Integer ac mi at nibh vulputate consequat, sed malesuada sem volutpat. Suspendisse potenti. Morbi sed libero eu erat vestibulum porttitor, a interdum ligula ullamcorper. Curabitur consequat sem ut nibh tristique, eget efficitur nibh dapibus.
+            </p>
+            <p>
+                Quisque dignissim lorem a lectus feugiat, vitae viverra massa rhoncus. Sed posuere, nulla quis consequat pharetra, arcu arcu luctus erat, eget ultrices metus erat vitae nibh. Pellentesque eu ante vitae neque blandit viverra. Donec pulvinar, ligula vitae aliquet fermentum, sem felis sollicitudin nisl, at ultrices augue arcu sed neque.
+            </p>
+            <p>
+                Integer posuere magna at dui feugiat, vel feugiat erat imperdiet. Vivamus a metus nec velit hendrerit dignissim. Duis porttitor, magna vitae aliquet condimentum, nisl ipsum elementum lectus, vitae volutpat dolor arcu non lectus. Nam consectetur eros id erat egestas, sit amet tempor mi dapibus.
+            </p>
+        </section>
+
+        <section id="beyond-the-desert">
+            <h3>
+                Beyond the Desert
+            </h3>
+            <p>
+                Oz is a land of impossible landscapes, ancient magic, and curious peoples. Hidden beyond the shifting sands of the Deadly Desert, the kingdom exists apart from the ordinary world, where golden roads wind through enchanted forests and cities of brilliant color rise from the countryside.
+            </p>
+            <p>
+                Travelers who arrive in Oz often discover that the land does not follow the rules they know. A field may whisper warnings to those who cross it. A forest may remember every traveler who has passed beneath its branches.
+            </p>
+            <p>
+                A simple journey from one village to another can become an adventure filled with strange companions, unexpected dangers, and wonders found nowhere else.
+            </p>
+            <p>
+                Quisque bibendum, massa sed venenatis malesuada, diam ipsum blandit urna, vel ultricies pede nulla vitae lacus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor, integer posuere erat a ante.
+            </p>
+        </section>
+
+        <section id="traveling-through-oz">
+            <h3>
+                Traveling Through Oz
+            </h3>
+            <p>
+                Sed elementum justo quis sem. Sed eu orci eu ante iaculis accumsan. Sed suscipit dolor quis mi. Curabitur ultrices nonummy lacus. Morbi ipsum ipsum, adipiscing eget, tincidunt vitae, pharetra at, tellus.
+            </p>
+            <p>
+                Nulla gravida, arcu eget dictum eleifend, velit ligula suscipit nibh, sagittis imperdiet metus nunc non pede. Aenean congue pede in nisi tristique interdum. Sed dignissim, risus sit amet ultrices pretium, sapien eros commodo leo, at luctus nibh turpis vitae erat. Vestibulum blandit arcu vel lectus tristique, quis ullamcorper nisi sollicitudin.
+            </p>
+            <p>
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean tempor, ipsum at tincidunt facilisis, arcu metus consectetur nisi, vitae pellentesque augue ligula sit amet erat. Suspendisse potenti. Donec auctor, nulla eu volutpat dapibus, velit magna elementum odio, quis dictum justo augue in mauris.
+            </p>
+        </section>
+
+        <section id="the-land-of-oz">
+            <h1>
+                The Land of Oz
+            </h1>
+            <p>
+                Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+            </p>
+            <p>
+                Suspendisse potenti. Etiam vitae augue nec magna vestibulum consectetur. Sed dignissim, ipsum id accumsan dapibus, justo nulla gravida magna, vel posuere lacus turpis eget nunc. Integer in quam vel tellus malesuada eleifend; nam sit amet lorem eu neque tristique condimentum.
+            </p>
+            <p>
+                Use the map as a framework rather than a strict measurement tool. Oz works best when geography supports the story.
+            </p>
+        </section>
+
+        <section id="the-emerald-city">
+            <h3>
+                The Emerald City
+            </h3>
+            <p>
+                Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum.
+            </p>
+            <p>
+                Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Aenean eu leo quam, pellentesque ornare sem lacinia quam venenatis vestibulum.
+            </p>
+            <p>
+                Suspendisse leo. Praesent turpis justo, aliquet ac, accumsan vel, posuere quis, pede. Morbi pretium lacus.
+            </p>
+        </section>
+
+        <section id="the-four-countries">
+            <h4>
+                The Four Countries
+            </h4>
+            <p>
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui, curabitur blandit tempus porttitor.
+            </p>
+            <p>
+                Aliquam erat volutpat. Nunc sit amet risus vel velit cursus luctus. Vivamus ut tortor ac arcu sodales posuere. Etiam porta sem malesuada magna mollis euismod, sed posuere consectetur est at lobortis.
+            </p>
+            <p>
+                These conventions are visual cues, not rules. Change them whenever your version of Oz calls for something stranger.
+            </p>
+            <p>
+                liquam dapibus ipsum vitae sem. Ut eget mauris ac nunc luctus ornare. Phasellus enim augue, rutrum tempus, blandit in, vehicula eu, neque. Sed consequat
+            </p>
+        </section>
+
+        <section id="roads-less-traveled">
+            <h3>
+                Roads Less Traveled
+            </h3>
+            <p>
+                Not every important place in Oz belongs to a country or appears on an official road. Hidden valleys, forgotten castles, talking forests, isolated farms, and impossible landmarks can exist wherever the story requires them.
+            </p>
+            <p>
+                When adding your own location, give it one memorable rule. Perhaps nobody can lie there. Perhaps every door opens somewhere different. Perhaps the inhabitants have forgotten the sun. A single strange idea can make an otherwise ordinary place feel unmistakably Ozian. Let the map grow as the characters do. Make the rule matter.
+            </p>
+            <p>
+                Quisque congue, risus quis egestas vulputate, arcu lectus interdum massa, sit amet posuere tortor ligula in eros. Sed consequat erat a magna vulputate, non luctus ipsum consequat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
+            </p>
+            <p>
+                Pellentesque mi dui, molestie sit amet, adipiscing id, iaculis quis, arcu. Nulla tellus sem, viverra eu, ultricies ac, mattis et, velit. Maecenas quis magna. Ut
+            </p>
+        </section>
+
+        <section id="the-wise-scarecrow">
+            <h3>
+                The Wise Scarecrow
+            </h3>
+            <p>
+                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+            </p>
+            <p>
+                Proin eget tortor risus. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
+            </p>
+            
+<style>
+    /* Global layout rules for the statblock wrapper */
+    .statblock-wrapper {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .statblock-content {
+        column-count: 2;
+    }
+
+    /* Fixed structural widths preventing sub-table overflow */
+    .statblock-stats {
+        display: flex;
+        gap: 0.5em;
+        margin-top: 1em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .statblock-stats table {
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* Fluid typography and scaling boundaries */
+    .statblock-stats tr.header-row {
+        font-size: clamp(7pt, 1.5vw, 9pt);
+    }
+
+    .statblock-stats th:nth-of-type(2),
+    .statblock-stats th:nth-of-type(4),
+    .statblock-stats td:nth-of-type(1),
+    .statblock-stats td:nth-of-type(3) {
+        width: clamp(1.2em, 4vw, 2em);
+        background-color: var(--lightemerald);
+    }
+
+    :root {
+        --stats-th-width: auto;
+        --stats-td-width: var(--stats-th-width);
+    }
+
+    .statblock-stats th,
+    .statblock-stats td {
+        font-size: clamp(8pt, 1.8vw, 11pt);
+        margin: 0;
+        padding: 0 1px;
+    }
+
+    .statblock-stats tr {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .statblock-stats th {
+        width: var(--stats-th-width);
+        text-align: center;
+    }
+
+    .statblock-stats td {
+        text-align: center;
+        width: var(--stats-td-width);
+    }
+
+    /* Typography and spacing */
+    .statblock-h3 {
+        margin-bottom: 0.2em;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .epithet {
+        display: block;
+        margin: 0 0 1em 0;
+        padding: 0 0 1em 0;
+        line-height: normal;
+        font-style: italic;
+        font-size: 10pt;
+    }
+
+    .spacer-col {
+        width: 2em;
+    }
+
+    .header-row th {
+        font-size: 1em;
+    }
+
+    .action-type,
+    .action-hit-label {
+        font-style: italic;
+    }
+
+    /* Highlight every cell in a hovered ability-score row */
+    .statblock-stats tr:not(.header-row):hover th,
+    .statblock-stats tr:not(.header-row):hover td {
+        background-color: var(--midemerald);
+    }
+
+    @media (max-width: 1900px) {
+        .statblock-content {
+            column-count: 1;
+        }
+    }
+</style>
+
+<section class="aside statblock-wrapper">
+    <aside class="inverted-card">
+        <div class="class">
+            <h3 class="statblock-h3">
+                The Wise Scarecrow
+            </h3>
+
+            <span class="epithet">
+                Medium humanoid, neutral good
+            </span>
+
+            <div class="statblock-content">
+                <table>
+                    <tr>
+                        <td>
+                            <span class="bold">AC</span>
+                            13 (natural armor)
+                        </td>
+                        <td>
+                            <span class="bold">Initiative</span>
+                            3
+                        </td>
+                        <td class="spacer-col"></td>
+                        <td class="spacer-col"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="bold">HP</span>
+                            27 (5d8 + 5)
+                        </td>
+                        
+                        <td>
+                            <span class="bold">Speed</span>
+                            30 ft.
+                        </td>
+                        <td class="spacer-col"></td>
+                        <td class="spacer-col"></td>
+                    </tr>
+                </table>
+
+                <div class="statblock-stats">
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Str</th>
+                            <td>12</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                        </tr>
+                        <tr>
+                            <th>Int</th>
+                            <td>16</td>
+                            <td>+3</td>
+                            <td>+5</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Dex</th>
+                            <td>14</td>
+                            <td>+2</td>
+                            <td>+2</td>
+                        </tr>
+                        <tr>
+                            <th>Wis</th>
+                            <td>14</td>
+                            <td>+2</td>
+                            <td>+4</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Con</th>
+                            <td>12</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                        </tr>
+                        <tr>
+                            <th>Cha</th>
+                            <td>12</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>
+                    
+                        <span class="bold">Skills</span>
+                        Investigation +5, Perception +4, Persuasion +3
+                        <br>
+                    
+                        <span class="bold">Vulnerabilities</span>
+                        Fire
+                        <br>
+                    
+                        <span class="bold">Sense</span>
+                        passive Perception 14
+                        <br>
+                    
+                        <span class="bold">Languages</span>
+                        Common, one additional language
+                        <br>
+                    
+                        <span class="bold">Challenge</span>
+                        1 (200 XP)
+                        
+                    
+                </p>
+
+                
+                    <h3 class="nomargin">Traits</h3>
+                    
+                        <p>
+                            <span class="bold italic">Clever Solution.</span>
+                            Once per turn, when the Scarecrow makes an ability check, he can add 1d4 to the result after seeing the roll.
+                        </p>
+                    
+                        <p>
+                            <span class="bold italic">Straw Body.</span>
+                            The Scarecrow has advantage on saving throws against being grappled or restrained.
+                        </p>
+                    
+                
+
+                
+                    <h3 class="nomargin">Actions</h3>
+
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Improvised Weapon.</span>
+
+                            
+                                <span class="action-type">Melee Weapon Attack:</span>
+                            
+
+                            
+                                +3 to hit
+                            
+
+                            to hit, reach 5 ft., one target.
+
+                            
+                                <span class="action-hit-label">Hit:</span>
+                                8 (1d8 + 4) piercing damage.
+                            
+                        </p>
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Outthink.</span>
+
+                            
+
+                            
+
+                            The Scarecrow chooses one creature within 30 feet that can hear him. The target must succeed on a DC 13 Wisdom saving throw or have disadvantage on its next attack roll before the end of its next turn.
+
+                            
+                        </p>
+                    
+                
+            </div>
+        </div>
+    </aside>
+</section>
+
+        </section>
+
+        <section id="the-brave-lion">
+            <h3>The Brave Lion</h3>`
+            <p>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+            </p>
+            <p>
+                Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus. Omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.
+            </p>
+            
+<style>
+    /* Global layout rules for the statblock wrapper */
+    .statblock-wrapper {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .statblock-content {
+        column-count: 2;
+    }
+
+    /* Fixed structural widths preventing sub-table overflow */
+    .statblock-stats {
+        display: flex;
+        gap: 0.5em;
+        margin-top: 1em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .statblock-stats table {
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* Fluid typography and scaling boundaries */
+    .statblock-stats tr.header-row {
+        font-size: clamp(7pt, 1.5vw, 9pt);
+    }
+
+    .statblock-stats th:nth-of-type(2),
+    .statblock-stats th:nth-of-type(4),
+    .statblock-stats td:nth-of-type(1),
+    .statblock-stats td:nth-of-type(3) {
+        width: clamp(1.2em, 4vw, 2em);
+        background-color: var(--lightemerald);
+    }
+
+    :root {
+        --stats-th-width: auto;
+        --stats-td-width: var(--stats-th-width);
+    }
+
+    .statblock-stats th,
+    .statblock-stats td {
+        font-size: clamp(8pt, 1.8vw, 11pt);
+        margin: 0;
+        padding: 0 1px;
+    }
+
+    .statblock-stats tr {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .statblock-stats th {
+        width: var(--stats-th-width);
+        text-align: center;
+    }
+
+    .statblock-stats td {
+        text-align: center;
+        width: var(--stats-td-width);
+    }
+
+    /* Typography and spacing */
+    .statblock-h3 {
+        margin-bottom: 0.2em;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .epithet {
+        display: block;
+        margin: 0 0 1em 0;
+        padding: 0 0 1em 0;
+        line-height: normal;
+        font-style: italic;
+        font-size: 10pt;
+    }
+
+    .spacer-col {
+        width: 2em;
+    }
+
+    .header-row th {
+        font-size: 1em;
+    }
+
+    .action-type,
+    .action-hit-label {
+        font-style: italic;
+    }
+
+    /* Highlight every cell in a hovered ability-score row */
+    .statblock-stats tr:not(.header-row):hover th,
+    .statblock-stats tr:not(.header-row):hover td {
+        background-color: var(--midemerald);
+    }
+
+    @media (max-width: 1900px) {
+        .statblock-content {
+            column-count: 1;
+        }
+    }
+</style>
+
+<section class="aside statblock-wrapper">
+    <aside class="inverted-card">
+        <div class="class">
+            <h3 class="statblock-h3">
+                The Brave Lion
+            </h3>
+
+            <span class="epithet">
+                Large beast, neutral good
+            </span>
+
+            <div class="statblock-content">
+                <table>
+                    <tr>
+                        <td>
+                            <span class="bold">AC</span>
+                            13
+                        </td>
+                        <td>
+                            <span class="bold">Initiative</span>
+                            -1
+                        </td>
+                        <td class="spacer-col"></td>
+                        <td class="spacer-col"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="bold">HP</span>
+                            45 (6d10 + 12)
+                        </td>
+                        
+                        <td>
+                            <span class="bold">Speed</span>
+                            40 ft.
+                        </td>
+                        <td class="spacer-col"></td>
+                        <td class="spacer-col"></td>
+                    </tr>
+                </table>
+
+                <div class="statblock-stats">
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Str</th>
+                            <td>18</td>
+                            <td>+4</td>
+                            <td>+4</td>
+                        </tr>
+                        <tr>
+                            <th>Int</th>
+                            <td>8</td>
+                            <td>-1</td>
+                            <td>-1</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Dex</th>
+                            <td>14</td>
+                            <td>+2</td>
+                            <td>+2</td>
+                        </tr>
+                        <tr>
+                            <th>Wis</th>
+                            <td>13</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Con</th>
+                            <td>15</td>
+                            <td>+2</td>
+                            <td>+4</td>
+                        </tr>
+                        <tr>
+                            <th>Cha</th>
+                            <td>12</td>
+                            <td>+1</td>
+                            <td>+3</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>
+                    
+                        <span class="bold">Skills</span>
+                        Athletics +6, Perception +3
+                        <br>
+                    
+                        <span class="bold">Sense</span>
+                        passive Perception 13
+                        <br>
+                    
+                        <span class="bold">Languages</span>
+                        Common
+                        <br>
+                    
+                        <span class="bold">Challenge</span>
+                        2 (450 XP)
+                        
+                    
+                </p>
+
+                
+                    <h3 class="nomargin">Traits</h3>
+                    
+                        <p>
+                            <span class="bold italic">Courage in Crisis.</span>
+                            The Lion has advantage on saving throws against being frightened while an ally is within 30 feet.
+                        </p>
+                    
+                        <p>
+                            <span class="bold italic">Protective Roar.</span>
+                            When a creature within 5 feet of the Lion is hit by an attack, the Lion can use his reaction to impose disadvantage on that attack roll.
+                        </p>
+                    
+                
+
+                
+                    <h3 class="nomargin">Actions</h3>
+
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Multiattack.</span>
+
+                            
+
+                            
+
+                            The Lion makes one Bite and one Claw attack.
+
+                            
+                        </p>
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Bite.</span>
+
+                            
+                                <span class="action-type">Melee Weapon Attack:</span>
+                            
+
+                            
+                                6 to hit
+                            
+
+                            to hit, reach 5 ft., one target.
+
+                            
+                                <span class="action-hit-label">Hit:</span>
+                                8 (1d8 + 4) piercing damage.
+                            
+                        </p>
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Claw.</span>
+
+                            
+                                <span class="action-type">Melee Weapon Attack:</span>
+                            
+
+                            
+                                6 to hit
+                            
+
+                            to hit, reach 5 ft., one target.
+
+                            
+                                <span class="action-hit-label">Hit:</span>
+                                7 (1d6 + 4) slashing damage.
+                            
+                        </p>
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Terrifying Roar (Recharge 5–6).</span>
+
+                            
+
+                            
+
+                            Each creature of the Lion’s choice within 15 feet must succeed on a DC 13 Wisdom saving throw or be frightened until the end of the Lion’s next turn.
+
+                            
+                        </p>
+                    
+                
+            </div>
+        </div>
+    </aside>
+</section>
+
+        </section>
+
+        <section id="great-and-powerful-oz">
+            <h3>
+                Great and Powerful Oz
+            </h3>
+            <p>
+                Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi auctor lorem non justo. Nam lacus libero, pretium at, lobortis vitae, ultricies et, tellus. Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet magna, vitae ornare odio metus a mi.</p>
+            <p>
+                Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus, maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
+            
+<style>
+    /* Global layout rules for the statblock wrapper */
+    .statblock-wrapper {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .statblock-content {
+        column-count: 2;
+    }
+
+    /* Fixed structural widths preventing sub-table overflow */
+    .statblock-stats {
+        display: flex;
+        gap: 0.5em;
+        margin-top: 1em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .statblock-stats table {
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* Fluid typography and scaling boundaries */
+    .statblock-stats tr.header-row {
+        font-size: clamp(7pt, 1.5vw, 9pt);
+    }
+
+    .statblock-stats th:nth-of-type(2),
+    .statblock-stats th:nth-of-type(4),
+    .statblock-stats td:nth-of-type(1),
+    .statblock-stats td:nth-of-type(3) {
+        width: clamp(1.2em, 4vw, 2em);
+        background-color: var(--lightemerald);
+    }
+
+    :root {
+        --stats-th-width: auto;
+        --stats-td-width: var(--stats-th-width);
+    }
+
+    .statblock-stats th,
+    .statblock-stats td {
+        font-size: clamp(8pt, 1.8vw, 11pt);
+        margin: 0;
+        padding: 0 1px;
+    }
+
+    .statblock-stats tr {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .statblock-stats th {
+        width: var(--stats-th-width);
+        text-align: center;
+    }
+
+    .statblock-stats td {
+        text-align: center;
+        width: var(--stats-td-width);
+    }
+
+    /* Typography and spacing */
+    .statblock-h3 {
+        margin-bottom: 0.2em;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .epithet {
+        display: block;
+        margin: 0 0 1em 0;
+        padding: 0 0 1em 0;
+        line-height: normal;
+        font-style: italic;
+        font-size: 10pt;
+    }
+
+    .spacer-col {
+        width: 2em;
+    }
+
+    .header-row th {
+        font-size: 1em;
+    }
+
+    .action-type,
+    .action-hit-label {
+        font-style: italic;
+    }
+
+    /* Highlight every cell in a hovered ability-score row */
+    .statblock-stats tr:not(.header-row):hover th,
+    .statblock-stats tr:not(.header-row):hover td {
+        background-color: var(--midemerald);
+    }
+
+    @media (max-width: 1900px) {
+        .statblock-content {
+            column-count: 1;
+        }
+    }
+</style>
+
+<section class="aside statblock-wrapper">
+    <aside class="inverted-card">
+        <div class="class">
+            <h3 class="statblock-h3">
+                The Great and Powerful Oz
+            </h3>
+
+            <span class="epithet">
+                Medium humanoid, neutral
+            </span>
+
+            <div class="statblock-content">
+                <table>
+                    <tr>
+                        <td>
+                            <span class="bold">AC</span>
+                            12
+                        </td>
+                        <td>
+                            <span class="bold">Initiative</span>
+                            3
+                        </td>
+                        <td class="spacer-col"></td>
+                        <td class="spacer-col"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="bold">HP</span>
+                            38 (7d8 + 7)
+                        </td>
+                        
+                        <td>
+                            <span class="bold">Speed</span>
+                            30 ft.
+                        </td>
+                        <td class="spacer-col"></td>
+                        <td class="spacer-col"></td>
+                    </tr>
+                </table>
+
+                <div class="statblock-stats">
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Str</th>
+                            <td>8</td>
+                            <td>-1</td>
+                            <td>-1</td>
+                        </tr>
+                        <tr>
+                            <th>Int</th>
+                            <td>16</td>
+                            <td>+3</td>
+                            <td>+3</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Dex</th>
+                            <td>12</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                        </tr>
+                        <tr>
+                            <th>Wis</th>
+                            <td>14</td>
+                            <td>+2</td>
+                            <td>+2</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Con</th>
+                            <td>12</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                        </tr>
+                        <tr>
+                            <th>Cha</th>
+                            <td>18</td>
+                            <td>+4</td>
+                            <td>+4</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>
+                    
+                        <span class="bold">Skills</span>
+                        Deception +6, Insight +4, Persuasion +6
+                        <br>
+                    
+                        <span class="bold">Sense</span>
+                        passive Perception 12
+                        <br>
+                    
+                        <span class="bold">Languages</span>
+                        Common, Draconic
+                        <br>
+                    
+                        <span class="bold">Challenge</span>
+                        3 (700 XP)
+                        
+                    
+                </p>
+
+                
+                    <h3 class="nomargin">Traits</h3>
+                    
+                        <p>
+                            <span class="bold italic">Great and Powerful.</span>
+                            Oz has advantage on Charisma (Deception) checks made to convince a creature that he possesses greater magical power than he actually does.
+                        </p>
+                    
+                        <p>
+                            <span class="bold italic">Illusory Wizardry.</span>
+                            Oz can cast Minor Illusion at will and Disguise Self three times per day.
+                        </p>
+                    
+                
+
+                
+                    <h3 class="nomargin">Actions</h3>
+
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Commanding Voice.</span>
+
+                            
+
+                            
+
+                            One creature Oz can see within 60 feet must succeed on a DC 14 Wisdom saving throw or be charmed until the end of Oz’s next turn.
+
+                            
+                        </p>
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Thunderous Display (Recharge 5–6).</span>
+
+                            
+
+                            
+
+                            Each creature in a 15-foot cone must make a DC 14 Dexterity saving throw, taking 10 (3d6) thunder damage on a failed save, or half as much on a success.
+
+                            
+                        </p>
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Escape Behind the Curtain (1/Day).</span>
+
+                            
+
+                            
+
+                            Oz becomes invisible until the end of his next turn and can move up to his speed without provoking opportunity attacks.
+
+                            
+                        </p>
+                    
+                
+            </div>
+        </div>
+    </aside>
+</section>
+
+        </section>
+
+        <section id="flying-monkey">
+            
+<style>
+    /* Global layout rules for the statblock wrapper */
+    .statblock-wrapper {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .statblock-content {
+        column-count: 2;
+    }
+
+    /* Fixed structural widths preventing sub-table overflow */
+    .statblock-stats {
+        display: flex;
+        gap: 0.5em;
+        margin-top: 1em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .statblock-stats table {
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* Fluid typography and scaling boundaries */
+    .statblock-stats tr.header-row {
+        font-size: clamp(7pt, 1.5vw, 9pt);
+    }
+
+    .statblock-stats th:nth-of-type(2),
+    .statblock-stats th:nth-of-type(4),
+    .statblock-stats td:nth-of-type(1),
+    .statblock-stats td:nth-of-type(3) {
+        width: clamp(1.2em, 4vw, 2em);
+        background-color: var(--lightemerald);
+    }
+
+    :root {
+        --stats-th-width: auto;
+        --stats-td-width: var(--stats-th-width);
+    }
+
+    .statblock-stats th,
+    .statblock-stats td {
+        font-size: clamp(8pt, 1.8vw, 11pt);
+        margin: 0;
+        padding: 0 1px;
+    }
+
+    .statblock-stats tr {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .statblock-stats th {
+        width: var(--stats-th-width);
+        text-align: center;
+    }
+
+    .statblock-stats td {
+        text-align: center;
+        width: var(--stats-td-width);
+    }
+
+    /* Typography and spacing */
+    .statblock-h3 {
+        margin-bottom: 0.2em;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .epithet {
+        display: block;
+        margin: 0 0 1em 0;
+        padding: 0 0 1em 0;
+        line-height: normal;
+        font-style: italic;
+        font-size: 10pt;
+    }
+
+    .spacer-col {
+        width: 2em;
+    }
+
+    .header-row th {
+        font-size: 1em;
+    }
+
+    .action-type,
+    .action-hit-label {
+        font-style: italic;
+    }
+
+    /* Highlight every cell in a hovered ability-score row */
+    .statblock-stats tr:not(.header-row):hover th,
+    .statblock-stats tr:not(.header-row):hover td {
+        background-color: var(--midemerald);
+    }
+
+    @media (max-width: 1900px) {
+        .statblock-content {
+            column-count: 1;
+        }
+    }
+</style>
+
+<section class="aside statblock-wrapper">
+    <aside class="inverted-card">
+        <div class="class">
+            <h3 class="statblock-h3">
+                Flying Monkey
+            </h3>
+
+            <span class="epithet">
+                Medium beast, chaotic neutral
+            </span>
+
+            <div class="statblock-content">
+                <table>
+                    <tr>
+                        <td>
+                            <span class="bold">AC</span>
+                            13
+                        </td>
+                        <td>
+                            <span class="bold">Initiative</span>
+                            -2
+                        </td>
+                        <td class="spacer-col"></td>
+                        <td class="spacer-col"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="bold">HP</span>
+                            11 (2d8 + 2)
+                        </td>
+                        
+                        <td>
+                            <span class="bold">Speed</span>
+                            30 ft., climb 30 ft., fly 40 ft.
+                        </td>
+                        <td class="spacer-col"></td>
+                        <td class="spacer-col"></td>
+                    </tr>
+                </table>
+
+                <div class="statblock-stats">
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Str</th>
+                            <td>10</td>
+                            <td>+0</td>
+                            <td>+0</td>
+                        </tr>
+                        <tr>
+                            <th>Int</th>
+                            <td>6</td>
+                            <td>-2</td>
+                            <td>-2</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Dex</th>
+                            <td>16</td>
+                            <td>+3</td>
+                            <td>+5</td>
+                        </tr>
+                        <tr>
+                            <th>Wis</th>
+                            <td>12</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Con</th>
+                            <td>12</td>
+                            <td>+1</td>
+                            <td>+1</td>
+                        </tr>
+                        <tr>
+                            <th>Cha</th>
+                            <td>8</td>
+                            <td>-1</td>
+                            <td>+1</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>
+                    
+                        <span class="bold">Skills</span>
+                        Acrobatics +5, Perception +3
+                        <br>
+                    
+                        <span class="bold">Sense</span>
+                        passive Perception 13
+                        <br>
+                    
+                        <span class="bold">Languages</span>
+                        understands Common but cannot speak
+                        <br>
+                    
+                        <span class="bold">Challenge</span>
+                        1/4 (50 XP)
+                        
+                    
+                </p>
+
+                
+                    <h3 class="nomargin">Traits</h3>
+                    
+                        <p>
+                            <span class="bold italic">Flyby.</span>
+                            The Monkey doesn't provoke opportunity attacks when it flies out of an enemy's reach.
+                        </p>
+                    
+                
+
+                
+                    <h3 class="nomargin">Actions</h3>
+
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Bite.</span>
+
+                            
+                                <span class="action-type">Melee Weapon Attack:</span>
+                            
+
+                            
+                                +5 to hit
+                            
+
+                            to hit, reach 5 ft., one target.
+
+                            
+                                <span class="action-hit-label">Hit:</span>
+                                5 (1d4 + 3) piercing damage.
+                            
+                        </p>
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Claws.</span>
+
+                            
+                                <span class="action-type">Melee Weapon Attack:</span>
+                            
+
+                            
+                                5 to hit
+                            
+
+                            to hit, reach 5 ft., one target.
+
+                            
+                                <span class="action-hit-label">Hit:</span>
+                                6 (1d6 + 3) slashing damage.
+                            
+                        </p>
+                    
+                
+            </div>
+        </div>
+    </aside>
+</section>
+
+        </section>
+
+        <section id="hammer-head">
+            
+<style>
+    /* Global layout rules for the statblock wrapper */
+    .statblock-wrapper {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .statblock-content {
+        column-count: 2;
+    }
+
+    /* Fixed structural widths preventing sub-table overflow */
+    .statblock-stats {
+        display: flex;
+        gap: 0.5em;
+        margin-top: 1em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .statblock-stats table {
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* Fluid typography and scaling boundaries */
+    .statblock-stats tr.header-row {
+        font-size: clamp(7pt, 1.5vw, 9pt);
+    }
+
+    .statblock-stats th:nth-of-type(2),
+    .statblock-stats th:nth-of-type(4),
+    .statblock-stats td:nth-of-type(1),
+    .statblock-stats td:nth-of-type(3) {
+        width: clamp(1.2em, 4vw, 2em);
+        background-color: var(--lightemerald);
+    }
+
+    :root {
+        --stats-th-width: auto;
+        --stats-td-width: var(--stats-th-width);
+    }
+
+    .statblock-stats th,
+    .statblock-stats td {
+        font-size: clamp(8pt, 1.8vw, 11pt);
+        margin: 0;
+        padding: 0 1px;
+    }
+
+    .statblock-stats tr {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .statblock-stats th {
+        width: var(--stats-th-width);
+        text-align: center;
+    }
+
+    .statblock-stats td {
+        text-align: center;
+        width: var(--stats-td-width);
+    }
+
+    /* Typography and spacing */
+    .statblock-h3 {
+        margin-bottom: 0.2em;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .epithet {
+        display: block;
+        margin: 0 0 1em 0;
+        padding: 0 0 1em 0;
+        line-height: normal;
+        font-style: italic;
+        font-size: 10pt;
+    }
+
+    .spacer-col {
+        width: 2em;
+    }
+
+    .header-row th {
+        font-size: 1em;
+    }
+
+    .action-type,
+    .action-hit-label {
+        font-style: italic;
+    }
+
+    /* Highlight every cell in a hovered ability-score row */
+    .statblock-stats tr:not(.header-row):hover th,
+    .statblock-stats tr:not(.header-row):hover td {
+        background-color: var(--midemerald);
+    }
+
+    @media (max-width: 1900px) {
+        .statblock-content {
+            column-count: 1;
+        }
+    }
+</style>
+
+<section class="aside statblock-wrapper">
+    <aside class="inverted-card">
+        <div class="class">
+            <h3 class="statblock-h3">
+                Hammer-Head
+            </h3>
+
+            <span class="epithet">
+                Medium monstrosity, unaligned
+            </span>
+
+            <div class="statblock-content">
+                <table>
+                    <tr>
+                        <td>
+                            <span class="bold">AC</span>
+                            14
+                        </td>
+                        <td>
+                            <span class="bold">Initiative</span>
+                            -3
+                        </td>
+                        <td class="spacer-col"></td>
+                        <td class="spacer-col"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="bold">HP</span>
+                            30 (4d8 + 12)
+                        </td>
+                        
+                        <td>
+                            <span class="bold">Speed</span>
+                            30 ft., climb 30 ft., fly 40 ft.
+                        </td>
+                        <td class="spacer-col"></td>
+                        <td class="spacer-col"></td>
+                    </tr>
+                </table>
+
+                <div class="statblock-stats">
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Str</th>
+                            <td>16</td>
+                            <td>+3</td>
+                            <td>+5</td>
+                        </tr>
+                        <tr>
+                            <th>Int</th>
+                            <td>4</td>
+                            <td>-3</td>
+                            <td>-3</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Dex</th>
+                            <td>10</td>
+                            <td>+0</td>
+                            <td>+0</td>
+                        </tr>
+                        <tr>
+                            <th>Wis</th>
+                            <td>10</td>
+                            <td>+0</td>
+                            <td>+0</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Con</th>
+                            <td>16</td>
+                            <td>+3</td>
+                            <td>+5</td>
+                        </tr>
+                        <tr>
+                            <th>Cha</th>
+                            <td>5</td>
+                            <td>-2</td>
+                            <td>-2</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>
+                    
+                        <span class="bold">Resistances</span>
+                        bludgeoning, piercing, and slashing from nonmagical attacks
+                        <br>
+                    
+                        <span class="bold">Sense</span>
+                        passive Perception 10
+                        <br>
+                    
+                        <span class="bold">Languages</span>
+                        understands Common but cannot speak
+                        <br>
+                    
+                        <span class="bold">Challenge</span>
+                        1 (200 XP)
+                        
+                    
+                </p>
+
+                
+                    <h3 class="nomargin">Traits</h3>
+                    
+                        <p>
+                            <span class="bold italic">Unyielding Neck.</span>
+                            The Hammer-Head has advantage on saving throws against being knocked prone or moved against its will.
+                        </p>
+                    
+                
+
+                
+                    <h3 class="nomargin">Actions</h3>
+
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Headbutt.</span>
+
+                            
+                                <span class="action-type">Melee Weapon Attack:</span>
+                            
+
+                            
+                                +5 to hit
+                            
+
+                            to hit, reach 5 ft., one target.
+
+                            
+                                <span class="action-hit-label">Hit:</span>
+                                8 (1d10 + 3) bludgeoning damage.
+                            
+                        </p>
+                    
+                        <p class="noborder">
+                            <span class="bold italic">Extend Neck.</span>
+
+                            
+
+                            
+
+                            The Hammer-Head extends its neck up to 20 feet and makes a Headbutt attack. On a hit, the target must succeed on a DC 13 Strength saving throw or be pushed 10 feet.
+
+                            
+                        </p>
+                    
+                
+            </div>
+        </div>
+    </aside>
+</section>
+
+        </section>
+
+        <section id="character-options">
+            <h1>
+                Character Options
+            </h1>
+            <p>
+                Donec id elit non mi porta gravida at eget metus. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+            </p>
+        </section>
+
+        <section id="what-brought-you-to-oz">
+            <h2>
+                What Brought You to Oz?
+            </h2>
+            <p>
+                Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor accumsan tincidunt. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat.
+            </p>
+            <p>
+                Sed egestas rutrum odio. Nunc ornare arcu. Quisque at augue ac magna sollicitudin sodales. Donec nulla justo, adipiscing sit amet, feugiat ac, facilisis euismod, risus. Pellentesque tincidunt, dolor eu dignissim mollis.
+            </p>
+        </section>
+
+        <section id="what-do-you-lack">
+            <h3>
+                What Do You Lack?
+            </h3>
+            <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus, nulla gravida orci a odio.
+            </p>
+            <p>
+                Aliquam erat volutpat. Integer nonummy, mauris in posuere faucibus, lacus lacus dictum tortor, vel pellentesque neque felis sed erat. Praesent vitae arcu. In hac habitasse platea dictumst. Cras euismod, felis vel pellentesque aliquam, magna nulla sollicitudin nibh, non blandit purus turpis vitae lectus.
+            </p>
+            <p>
+                Morbi pretium lacus. Cras non metus. Donec laoreet sem at elit. Cum sociis natoque penatibus et.
+            </p>
+        </section>
+
+        <section id="make-the-familiar-feel-strange">
+            <h3>
+                Make the Familiar Feel Strange
+            </h3>
+            <p>
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla facilisi. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus.
+            </p>
+        </section>
+
+        <section id="reimagining-magic">
+            <h3>
+                Reimagining Magic
+            </h3>
+            <p>
+                Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.
+            </p>
+            <p>
+                Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui, etiam rhoncus.
+            </p>
+            <p>
+                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum, aenean imperdiet, etiam ultricies nisi vel augue.
+            </p>
+            <p>
+                Sed laoreet, tortor vel cursus fringilla, turpis elit vestibulum arcu, eu varius dolor leo in nulla. In sem ipsum, faucibus quis, varius tristique, porta eget, lorem. Curabitur hendrerit diam et mauris. Etiam porta nunc euismod dui. Maecenas a lectus. In hac habitasse
+            </p>
+        </section>
+
+        <section id="treasures">
+            <h1>
+                Treasures
+            </h1>
+            <p>
+                Quisque interdum, sapien sit amet aliquam consequat, justo magna aliquet risus, vitae porta neque nisi ac lorem. Aenean posuere tortor sed cursus pretium. Donec vel mi a turpis posuere blandit. Sed non magna at lorem posuere posuere, nec dapibus erat vulputate.
+            </p>
+            <p>
+                Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.
+            </p>
+
+            <table class="roll-table">
+                <colgroup>
+                    <col style="width: 3em;">
+                    <col>
+                </colgroup>
+                <tr>
+                    <th colspan="2">First Impressions of Oz</th>
+                </tr>
+                <tr>
+                    <th class="center">d10</th>
+                    <th class="shifted">You Notice…</th>
+                </tr>
+                <tr>
+                    <td class="center">1</td>
+                    <td class="shifted">A road that changes direction overnight.</td>
+                </tr>
+                <tr>
+                    <td class="center">2</td>
+                    <td class="shifted">A talking creature offering unexpected advice.</td>
+                </tr>
+                <tr>
+                    <td class="center">3</td>
+                    <td class="shifted">A village preparing for an unusual celebration.</td>
+                </tr>
+                <tr>
+                    <td class="center">4</td>
+                    <td class="shifted">A forgotten landmark covered in magical symbols.</td>
+                </tr>
+                <tr>
+                    <td class="center">5</td>
+                    <td class="shifted">A traveler searching for a lost companion.</td>
+                </tr>
+                <tr>
+                    <td class="center">6</td>
+                    <td class="shifted">A strange artifact half-buried beside the Yellow Brick Road.</td>
+                </tr>
+                <tr>
+                    <td class="center">7</td>
+                    <td class="shifted">A field of flowers that quietly turns to face passing travelers.</td>
+                </tr>
+                <tr>
+                    <td class="center">8</td>
+                    <td class="shifted">A weathered signpost pointing toward places you've never heard of.</td>
+                </tr>
+                <tr>
+                    <td class="center">9</td>
+                    <td class="shifted">A cheerful procession carrying gifts for a guest no one can identify.</td>
+                </tr>
+                <tr>
+                    <td class="center">10</td>
+                    <td class="shifted">A distant melody that seems to drift closer no matter which road you take.</td>
+                </tr>
+            </table>
+
+            <section id="aside1" class="aside" style="display: flex; flex-flow: column; align-items: center; margin: 1rem 0;">
+                <aside class="inverted-card">
+                    <div class="noborder">
+                        <h3>
+                            Currency
+                        </h3>
+                        <p>
+                            Phasellus blandit leo ut odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        </p>
+                        <h3>
+                            Languages
+                        </h3>
+                        <p>
+                            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                        </p>
+                        <h3>
+                            Customs
+                        </h3>
+                        <p>
+                            Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                        </p>
+                        <h3>
+                            Filler
+                        </h3>
+                        <p>
+                            Nam nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.
+                        </p>
+                    </div>
+                </aside>
+            </section>
+
+        </section>
+
+        <table id="what-do-you-seek" class="roll-table">
+            <colgroup>
+                <col style="width: 3em;">
+                <col>
+            </colgroup>
+            <tr>
+                <th colspan="2">What Do You Seek?</th>
+            </tr>
+            <tr>
+                <th class="center">d10</th>
+                <th class="shifted">Motivation</th>
+            </tr>
+            <tr>
+                <td class="center">1</td>
+                <td class="shifted">A way home.</td>
+            </tr>
+            <tr>
+                <td class="center">2</td>
+                <td class="shifted">A legendary treasure.</td>
+            </tr>
+            <tr>
+                <td class="center">3</td>
+                <td class="shifted">Recognition from Someone Important.</td>
+            </tr>
+            <tr>
+                <td class="center">4</td>
+                <td class="shifted">A cure for a strange curse.</td>
+            </tr>
+            <tr>
+                <td class="center">5</td>
+                <td class="shifted">Revenge against a witch.</td>
+            </tr>
+            <tr>
+                <td class="center">6</td>
+                <td class="shifted">A missing friend or family member.</td>
+            </tr>
+            <tr>
+                <td class="center">7</td>
+                <td class="shifted">Proof that a famous story is true.</td>
+            </tr>
+            <tr>
+                <td class="center">8</td>
+                <td class="shifted">A place where you finally belong.</td>
+            </tr>
+            <tr>
+                <td class="center">9</td>
+                <td class="shifted">An audience with the Wizard.</td>
+            </tr>
+            <tr>
+                <td class="center">10</td>
+                <td class="shifted">Something you cannot yet explain.</td>
+            </tr>
+        </table>
+		
+		<section id="aside1" class="aside" style="display: flex; flex-flow: column; align-items: center; margin: 1rem 0;">
+            <aside class="inverted-card">
+                <div class="noborder">
+                    <h3>
+                        Ozian Magic
+                    </h3>
+                    <p>
+						Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam, pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                    </p>
+                </div>
+            </aside>
+        </section>
+
+        <table id="strange-things-found-on-the-road" class="roll-table">
+            <colgroup>
+                <col style="width: 3em;">
+                <col>
+            </colgroup>
+            <tr>
+                <th colspan="2">Strange Things Found on the Road</th>
+            </tr>
+            <tr>
+                <th class="center">d10</th>
+                <th class="shifted">Treasure</th>
+            </tr>
+            <tr>
+                <td class="center">1</td>
+                <td class="shifted">A brass compass that points toward the thing you most desire.</td>
+            </tr>
+            <tr>
+                <td class="center">2</td>
+                <td class="shifted">A blue glass bottle containing one perfect snowflake.</td>
+            </tr>
+            <tr>
+                <td class="center">3</td>
+                <td class="shifted">A key that only works after being given a compliment.</td>
+            </tr>
+            <tr>
+                <td class="center">4</td>
+                <td class="shifted">A pocket mirror that shows yesterday.</td>
+            </tr>
+            <tr>
+                <td class="center">5</td>
+                <td class="shifted">A silver bell that only animals can hear.</td>
+            </tr>
+            <tr>
+                <td class="center">6</td>
+                <td class="shifted">A pair of red gloves that never become dirty.</td>
+            </tr>
+            <tr>
+                <td class="center">7</td>
+                <td class="shifted">A green coin bearing an unfamiliar sign.</td>
+            </tr>
+            <tr>
+                <td class="center">8</td>
+                <td class="shifted">A tiny wooden door on its lonesome.</td>
+            </tr>
+            <tr>
+                <td class="center">9</td>
+                <td class="shifted">A hat that always fits the wearer perfectly.</td>
+            </tr>
+            <tr>
+                <td class="center">10</td>
+                <td class="shifted">A small, unmarked box that hums softly when opened.</td>
+            </tr>
+        </table>
+
+        <table id="enchanted-rewards">
+            <tr>
+                <th colspan="3">Enchanted Rewards</th>
+            </tr>
+            <tr>
+                <th>d10</th>
+                <th>Treasure</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td class="center">1</td>
+                <td>Courage Medal</td>
+                <td>Once per day, gain advantage on a fear saving throw.</td>
+            </tr>
+            <tr>
+                <td class="center">2</td>
+                <td>Emerald Ribbon</td>
+                <td>Tie around an object to make it glow green for 24 hours.</td>
+            </tr>
+            <tr>
+                <td class="center">3</td>
+                <td>Traveler's Shoes</td>
+                <td>Your walking speed increases by 5 feet for one day.</td>
+            </tr>
+            <tr>
+                <td class="center">4</td>
+                <td>Silver Thimble</td>
+                <td>Once per day, repair a Small or Tiny mundane object.</td>
+            </tr>
+            <tr>
+                <td class="center">5</td>
+                <td>Whistle of Oz</td>
+                <td>One friendly creature within 300 ft. hears your whistle clearly.</td>
+            </tr>
+            <tr>
+                <td class="center">6</td>
+                <td>Never-Empty Satchel</td>
+                <td>Always contains one mundane item you reasonably need.</td>
+            </tr>
+            <tr>
+                <td class="center">7</td>
+                <td>Golden Apple</td>
+                <td>Eating it ends one nonmagical disease or poison.</td>
+            </tr>
+            <tr>
+                <td class="center">8</td>
+                <td>Witch's Button</td>
+                <td>Sewn onto clothing, it grants advantage on Deception checks.</td>
+            </tr>
+            <tr>
+                <td class="center">9</td>
+                <td>Pocket Tornado</td>
+                <td>Releases a gust that pushes creatures 10 feet.</td>
+            </tr>
+            <tr>
+                <td class="center">10</td>
+                <td>Heart-Shaped Locket</td>
+                <td>You always know when a nearby friend is frightened.</td>
+            </tr>
+        </table>
+    </article>
+    
+    
+        <script src="http://127.0.0.1:35729/livereload.js?snipver=1"></script>
+    
+
+</html>
+  <script src="http://127.0.0.1:35729/livereload.js?snipver=1"></script>
+</body>
+</html>

@@ -24,5 +24,3 @@ gallery:
       - image: "/assets/images/bwi-beacon-sellsheet/bwi-beacon-sellsheet-04.webp"
         alt: ""
 ---
-
-testing testing

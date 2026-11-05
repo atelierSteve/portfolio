@@ -25,5 +25,3 @@ gallery:
       - image: "/assets/images/las-fallas-festival/las-fallas-festival-04.webp"
         alt: ""
 ---
-
-testing testing

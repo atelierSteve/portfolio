@@ -21,5 +21,3 @@ gallery:
       - image: "/assets/images/statues/candlejack-03.webp"
         alt: ""
 ---
-
-testing testing

@@ -16,5 +16,3 @@ gallery:
       - image: "/assets/images/bwi-board-sellsheet/bwi-board-sellsheet-01.webp"
         alt: ""
 ---
-
-testing testing

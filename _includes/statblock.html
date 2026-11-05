@@ -1,0 +1,262 @@
+
+<style>
+    /* Global layout rules for the statblock wrapper */
+    .statblock-wrapper {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .statblock-content {
+        column-count: 2;
+    }
+
+    /* Fixed structural widths preventing sub-table overflow */
+    .statblock-stats {
+        display: flex;
+        gap: 0.5em;
+        margin-top: 1em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .statblock-stats table {
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* Fluid typography and scaling boundaries */
+    .statblock-stats tr.header-row {
+        font-size: clamp(7pt, 1.5vw, 9pt);
+    }
+
+    .statblock-stats th:nth-of-type(2),
+    .statblock-stats th:nth-of-type(4),
+    .statblock-stats td:nth-of-type(1),
+    .statblock-stats td:nth-of-type(3) {
+        width: clamp(1.2em, 4vw, 2em);
+        background-color: var(--lightemerald);
+    }
+
+    :root {
+        --stats-th-width: auto;
+        --stats-td-width: var(--stats-th-width);
+    }
+
+    .statblock-stats th,
+    .statblock-stats td {
+        font-size: clamp(8pt, 1.8vw, 11pt);
+        margin: 0;
+        padding: 0 1px;
+    }
+
+    .statblock-stats tr {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .statblock-stats th {
+        width: var(--stats-th-width);
+        text-align: center;
+    }
+
+    .statblock-stats td {
+        text-align: center;
+        width: var(--stats-td-width);
+    }
+
+    /* Typography and spacing */
+    .statblock-h3 {
+        margin-bottom: 0.2em;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .epithet {
+        display: block;
+        margin: 0 0 1em 0;
+        padding: 0 0 1em 0;
+        line-height: normal;
+        font-style: italic;
+        font-size: 10pt;
+    }
+
+    .spacer-col {
+        width: 2em;
+    }
+
+    .header-row th {
+        font-size: 1em;
+    }
+
+    .action-type,
+    .action-hit-label {
+        font-style: italic;
+    }
+
+    /* Highlight every cell in a hovered ability-score row */
+    .statblock-stats tr:not(.header-row):hover th,
+    .statblock-stats tr:not(.header-row):hover td {
+        background-color: var(--midemerald);
+    }
+
+    @media (max-width: 1900px) {
+        .statblock-content {
+            column-count: 1;
+        }
+    }
+</style>
+
+<section class="aside statblock-wrapper">
+    <aside class="inverted-card">
+        <div class="class">
+            <h3 class="statblock-h3">
+                {{ include.monster.name }}
+            </h3>
+
+            <span class="epithet">
+                {{ include.monster.epithet }}
+            </span>
+
+            <div class="statblock-content">
+                <table>
+                    <tr>
+                        <td>
+                            <span class="bold">AC</span>
+                            {{ include.monster.ac }}
+                        </td>
+                        <td>
+                            <span class="bold">Initiative</span>
+                            {{ include.monster.initiative }}
+                        </td>
+                        <td class="spacer-col"></td>
+                        <td class="spacer-col"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="bold">HP</span>
+                            {{ include.monster.hp }}
+                        </td>
+                        
+                        <td>
+                            <span class="bold">Speed</span>
+                            {{ include.monster.speed }}
+                        </td>
+                        <td class="spacer-col"></td>
+                        <td class="spacer-col"></td>
+                    </tr>
+                </table>
+
+                <div class="statblock-stats">
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Str</th>
+                            <td>{{ include.monster.stats.str.val }}</td>
+                            <td>{{ include.monster.stats.str.mod }}</td>
+                            <td>{{ include.monster.stats.str.save }}</td>
+                        </tr>
+                        <tr>
+                            <th>Int</th>
+                            <td>{{ include.monster.stats.int.val }}</td>
+                            <td>{{ include.monster.stats.int.mod }}</td>
+                            <td>{{ include.monster.stats.int.save }}</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Dex</th>
+                            <td>{{ include.monster.stats.dex.val }}</td>
+                            <td>{{ include.monster.stats.dex.mod }}</td>
+                            <td>{{ include.monster.stats.dex.save }}</td>
+                        </tr>
+                        <tr>
+                            <th>Wis</th>
+                            <td>{{ include.monster.stats.wis.val }}</td>
+                            <td>{{ include.monster.stats.wis.mod }}</td>
+                            <td>{{ include.monster.stats.wis.save }}</td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th></th>
+                            <th>Mod</th>
+                            <th>Save</th>
+                        </tr>
+                        <tr>
+                            <th>Con</th>
+                            <td>{{ include.monster.stats.con.val }}</td>
+                            <td>{{ include.monster.stats.con.mod }}</td>
+                            <td>{{ include.monster.stats.con.save }}</td>
+                        </tr>
+                        <tr>
+                            <th>Cha</th>
+                            <td>{{ include.monster.stats.cha.val }}</td>
+                            <td>{{ include.monster.stats.cha.mod }}</td>
+                            <td>{{ include.monster.stats.cha.save }}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>
+                    {% for line in include.monster.meta_lines %}
+                        <span class="bold">{{ line.label }}</span>
+                        {{ line.text }}
+                        {% unless forloop.last %}<br>{% endunless %}
+                    {% endfor %}
+                </p>
+
+                {% if include.monster.features %}
+                    <h3 class="nomargin">Traits</h3>
+                    {% for feature in include.monster.features %}
+                        <p>
+                            <span class="bold italic">{{ feature.name }}.</span>
+                            {{ feature.desc }}
+                        </p>
+                    {% endfor %}
+                {% endif %}
+
+                {% if include.monster.actions %}
+                    <h3 class="nomargin">Actions</h3>
+
+                    {% for action in include.monster.actions %}
+                        <p class="noborder">
+                            <span class="bold italic">{{ action.name }}.</span>
+
+                            {% if action.type != "" and action.type %}
+                                <span class="action-type">{{ action.type }}:</span>
+                            {% endif %}
+
+                            {% if action.bonus != "" and action.bonus %}
+                                {{ action.bonus }} to hit
+                            {% endif %}
+
+                            {{ action.detail }}
+
+                            {% if action.hit != "" and action.hit %}
+                                <span class="action-hit-label">Hit:</span>
+                                {{ action.hit }}
+                            {% endif %}
+                        </p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </aside>
+</section>

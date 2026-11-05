@@ -18,5 +18,3 @@ gallery:
       - image: "/assets/images/spectr/spectr-02.webp"
         alt: ""
 ---
-
-testing testing

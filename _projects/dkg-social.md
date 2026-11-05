@@ -34,5 +34,3 @@ gallery:
       - image: "/assets/images/dkg-social/dkg-social-07.webp"
         alt: ""
 ---
-
-testing testing

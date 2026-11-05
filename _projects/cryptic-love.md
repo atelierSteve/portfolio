@@ -13,5 +13,3 @@ gallery:
       - image: "/assets/images/illustrations/cryptic-love.webp"
         alt: ""
 ---
-
-testing testing

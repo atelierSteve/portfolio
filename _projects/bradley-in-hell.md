@@ -13,5 +13,3 @@ gallery:
       - image: "/assets/images/illustrations/bradley-in-hell.webp"
         alt: ""
 ---
-
-testing testing

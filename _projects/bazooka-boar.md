@@ -23,5 +23,3 @@ gallery:
       - image: "/assets/images/statues/bazooka-boar-04.webp"
         alt: ""
 ---
-
-testing testing

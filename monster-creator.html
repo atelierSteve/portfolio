@@ -1,0 +1,122 @@
+---
+layout: default
+title: Monster Creator
+permalink: /monster-creator/
+description: Build a custom tabletop fantasy monster.
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/monster-creator.css' | relative_url }}">
+
+<section class="monster-tool">
+  <header class="monster-tool__header">
+    <p class="monster-eyebrow">CREATURE DESIGN WORKSHOP</p>
+    <h1>Monster Creator</h1>
+    <p>Build a creature from benchmark data, choose its combat role, and customize its ability scores.</p>
+  </header>
+
+  <div class="monster-panel">
+    <h2>1. Define your monster</h2>
+
+    <form id="monster-form">
+      <div class="monster-form-grid">
+        <label class="monster-field monster-field--wide">
+          Monster name
+          <input id="monster-name" name="name" maxlength="100" placeholder="e.g. Ashfang, the Gatekeeper">
+        </label>
+
+        <label class="monster-field">
+          Challenge rating
+          <select id="monster-cr" name="cr" required></select>
+        </label>
+
+        <label class="monster-field">
+          Combat role
+          <select id="monster-role" name="role" required></select>
+        </label>
+
+        <label class="monster-field">
+          Size
+          <select id="monster-size" name="size"></select>
+        </label>
+
+        <label class="monster-field">
+          Creature type
+          <select id="monster-type" name="creature_type"></select>
+        </label>
+
+        <label class="monster-field monster-field--wide">
+          Alignment
+          <select id="monster-alignment" name="alignment"></select>
+        </label>
+      </div>
+
+      <p id="role-description" class="monster-muted"></p>
+
+      <div class="monster-divider"></div>
+
+      <h2>2. Allocate ability points</h2>
+      <p class="monster-muted">Each role starts with a different ability profile. Spend up to 12 bonus points, with a maximum +4 per ability and a maximum final score of 20.</p>
+
+      <label class="monster-field monster-field--wide">
+        Allocation method
+        <select id="allocation-method" name="allocation_method">
+          <option value="manual">Manual allocation</option>
+          <option value="random">Random allocation</option>
+          <option value="none">No bonus points</option>
+        </select>
+      </label>
+
+      <div id="allocation-panel">
+        <div id="ability-grid" class="monster-ability-grid"></div>
+        <p class="monster-point-count"><span id="points-spent">0</span> / <span id="point-pool">12</span> points spent</p>
+      </div>
+
+      <button class="monster-button" type="submit" id="generate-button">Generate Monster</button>
+      <p id="form-status" class="monster-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+
+  <section id="monster-results" class="monster-results" hidden aria-live="polite">
+    <div class="monster-results__heading">
+      <div>
+        <p class="monster-eyebrow">GENERATED CREATURE</p>
+        <h2 id="result-name"></h2>
+        <p id="result-subtitle" class="monster-muted"></p>
+      </div>
+    </div>
+
+    <div id="monster-stat-grid" class="monster-stat-grid"></div>
+
+    <div class="monster-panel">
+      <h3>Ability scores</h3>
+      <div id="result-abilities" class="monster-result-abilities"></div>
+      <p id="result-allocation" class="monster-muted"></p>
+    </div>
+
+    <div class="monster-panel">
+      <h3 id="attack-name"></h3>
+      <p id="attack-details"></p>
+      <p id="attack-damage" class="monster-damage"></p>
+      <h4>Expected damage by target AC</h4>
+      <div class="monster-table-wrap">
+        <table class="monster-table">
+          <thead>
+            <tr><th>Target AC</th><th>Hit chance</th><th>Expected damage</th></tr>
+          </thead>
+          <tbody id="damage-rows"></tbody>
+        </table>
+      </div>
+      <p class="monster-muted">Expected damage is per attack and excludes critical-hit bonus damage. It is not damage per round.</p>
+    </div>
+
+    <div class="monster-panel">
+      <h3>Design notes</h3>
+      <ul id="design-notes"></ul>
+      <p class="monster-muted">This is a draft template, not a fully validated rules-ready stat block.</p>
+    </div>
+  </section>
+
+  <p class="monster-footer">Powered by a Python benchmark engine. This local prototype requires the development API to be running.</p>
+</section>
+
+<script src="{{ '/assets/js/monster-creator.js' | relative_url }}" defer></script>

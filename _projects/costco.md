@@ -30,5 +30,3 @@ gallery:
       - image: "/assets/images/costco/costco-07.webp"
         alt: ""
 ---
-
-testing testing

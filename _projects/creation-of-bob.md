@@ -13,5 +13,3 @@ gallery:
       - image: "/assets/images/illustrations/creation-of-bob.webp"
         alt: ""
 ---
-
-testing testing
