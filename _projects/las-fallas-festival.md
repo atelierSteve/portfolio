@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Las Fallas Festival"
 description: "A mock campaign and marketing collateral for the Las Fallas festival in Valencia, Spain."
 tags:

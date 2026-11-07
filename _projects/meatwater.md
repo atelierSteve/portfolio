@@ -1,5 +1,6 @@
 ---
 layout: meatwater
+page_type: "project"
 title: "Meatwater"
 description: "Savor the flavor."
 tags:

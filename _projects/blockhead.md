@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Blockhead"
 description: "Sort of like if a gelatinous cube was also a person."
 tags:

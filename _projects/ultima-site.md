@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Ultima Site"
 description: "An ecommerce site for automotive accessories and utilities such as marine lighting and zip ties."
 tags:

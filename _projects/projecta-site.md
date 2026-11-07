@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Projecta Site"
 description: "An ecommerce site for automotive accessories such as battery chargers and jumpstarters."
 tags:

@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "DKG Social"
 description: "Social graphics for an Oklahoman non-profit specializing in helping veterans receive their benefits."
 tags:

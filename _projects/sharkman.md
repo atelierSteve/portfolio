@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Sharkman!"
 description: "He’s part shark, he’s part man, but he’s all Sharkman!"
 tags:

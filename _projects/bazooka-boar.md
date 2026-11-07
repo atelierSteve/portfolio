@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Bazooka Boar"
 description: "He’s not really a boar but I enjoy the pun."
 tags:

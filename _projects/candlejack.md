@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Candlejack"
 description: "A statue inspired by Freakazoid! Candlejack was one of my favori"
 tags:

@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Spectr Ultra-Proof Beer"
 description: "A mock ultra-proof beer themed around the phrase “memento mori.”"
 tags:

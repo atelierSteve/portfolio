@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Cappy inspired by Fallout"
 description: "A statue inspired by Fallout. This might even be an actual character! I couldn’t remember! I don’t think so but who knows? Not me!"
 tags:

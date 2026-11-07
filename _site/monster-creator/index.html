@@ -12,8 +12,30 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body data-page-type="">
   <link rel="stylesheet" href="/assets/css/monster-creator.css">
+
+<style>
+  :root {
+    --main-color: #eee;
+    --accent-color: red;
+  }
+
+  h1, h2, h3, h4 {
+    color: var(--main-color);
+  }
+
+  .monster-panel h2, .monster-panel h3, .monster-panel h4 {
+    color: var(--accent-color);
+  }
+
+  .monster-tool__header p, .monster-eyebrow {
+    color: var(--main-color);
+  }
+
+
+
+</style>
 
 <section class="monster-tool">
   <header class="monster-tool__header">
@@ -124,11 +146,18 @@
     </div>
   </section>
 
-  <p class="monster-footer">Powered by a Python benchmark engine. This local prototype requires the development API to be running.</p>
+   <p class="monster-footer">Powered by a benchmark-based monster generation engine.</p>
 </section>
 
-<script src="/assets/js/monster-creator.js" defer></script>
-
+<script
+  src="/assets/js/monster-engine.js"
+  data-benchmarks="/assets/data/monster_benchmarks_by_cr.json"
+  defer
+></script>
+<script
+  src="/assets/js/monster-creator.js"
+  defer
+></script>
 
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/gallery-rows.js" defer></script>

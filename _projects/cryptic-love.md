@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Cryptic Love"
 description: "Character art for a dating game concept where you date cryptids."
 tags:

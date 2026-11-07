@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "CyberPatrick"
 description: "X-Men x SpongeBob"
 tags:

@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Neue Specimen"
 description: "A type specimen poster featuring the typography and history of the Helvetica Neue typeface."
 tags:

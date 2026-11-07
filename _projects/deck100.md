@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Deck100"
 description: "A physical d100 and roleplaying game randomizer."
 tags:

@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Killzone Lighting Brochure"
 description: "A brochure for killzone lighting which is used for workplace safety."
 tags:

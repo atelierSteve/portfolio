@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Arthur Dent"
 description: "What if PopVinyl made Hitchhiker’s Guide to the Galaxy Funko Pops? They might but here’s mine!"
 tags:

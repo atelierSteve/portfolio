@@ -7,6 +7,28 @@ description: Build a custom tabletop fantasy monster.
 
 <link rel="stylesheet" href="{{ '/assets/css/monster-creator.css' | relative_url }}">
 
+<style>
+  :root {
+    --main-color: #eee;
+    --accent-color: red;
+  }
+
+  h1, h2, h3, h4 {
+    color: var(--main-color);
+  }
+
+  .monster-panel h2, .monster-panel h3, .monster-panel h4 {
+    color: var(--accent-color);
+  }
+
+  .monster-tool__header p, .monster-eyebrow {
+    color: var(--main-color);
+  }
+
+
+
+</style>
+
 <section class="monster-tool">
   <header class="monster-tool__header">
     <p class="monster-eyebrow">CREATURE DESIGN WORKSHOP</p>
@@ -116,7 +138,15 @@ description: Build a custom tabletop fantasy monster.
     </div>
   </section>
 
-  <p class="monster-footer">Powered by a Python benchmark engine. This local prototype requires the development API to be running.</p>
+   <p class="monster-footer">Powered by a benchmark-based monster generation engine.</p>
 </section>
 
-<script src="{{ '/assets/js/monster-creator.js' | relative_url }}" defer></script>
+<script
+  src="{{ '/assets/js/monster-engine.js' | relative_url }}"
+  data-benchmarks="{{ '/assets/data/monster_benchmarks_by_cr.json' | relative_url }}"
+  defer
+></script>
+<script
+  src="{{ '/assets/js/monster-creator.js' | relative_url }}"
+  defer
+></script>

@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Creation of Bob"
 description: "It’s like if Michelangelo did Bob’s Burgers. Well, more like Bob’s Burgers did Michelangelo."
 tags:

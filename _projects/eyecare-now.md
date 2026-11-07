@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Eyecare Now"
 description: "A website for an urgent care specializing in eye care."
 tags:

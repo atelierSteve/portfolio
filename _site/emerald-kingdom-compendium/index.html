@@ -83,6 +83,16 @@
             text-align: center;
         }
 
+        .two-column {
+            display: flex;
+            flex-direction: row;
+            gap: 2em;
+        }
+
+        .column {
+            flex: 1;
+        }
+
         h3.noborder {
             border-bottom: none !important;
             margin: 0 0 0 !important;
@@ -357,12 +367,20 @@
             <h3>
                 The Wise Scarecrow
             </h3>
-            <p>
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-            </p>
-            <p>
-                Proin eget tortor risus. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
-            </p>
+
+            <div class="two-column">
+
+                <div><img style="display: block; margin: auto;" src="/assets/images/emerald-kingdom/web/scarecrow.webp" width="350"></div>
+                <div>
+                    <p>
+                        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                    </p>
+                    <p>
+                        Proin eget tortor risus. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
+                    </p>
+                </div>
+            </div>
+
             
 <style>
     /* Global layout rules for the statblock wrapper */
@@ -659,10 +677,11 @@
     </aside>
 </section>
 
+
         </section>
 
         <section id="the-brave-lion">
-            <h3>The Brave Lion</h3>`
+            <h3>The Brave Lion</h3>
             <p>
                 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
             </p>

@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "BWI Board Sellsheet"
 description: "A sellsheet for ID Boards which use LEDs to display numbers."
 tags:

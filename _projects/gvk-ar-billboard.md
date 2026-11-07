@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "GvK AR Billboard"
 description: "A mock billboard for the movie Godzilla vs Kong that would use AR tech to immerse the characters in the location of the billboard."
 tags:

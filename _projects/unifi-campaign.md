@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Unifi Campaign"
 description: "A campaign for a mock educational web platform for migrants new to the Berlin area."
 tags:

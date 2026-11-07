@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Kodiak the Barbearian"
 description: "A bear barbarian. Puns!"
 tags:

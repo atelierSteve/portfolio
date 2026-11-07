@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Courage Souls"
 description: "Oops you got Dark Souls in my Courage the Cowardly Dog."
 tags:

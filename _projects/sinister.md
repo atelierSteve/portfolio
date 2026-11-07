@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Sinister Paranormal Quarterly"
 description: "A mock magazine designed to give paranormal enthusiasts a more sophisticated reading experience."
 tags:

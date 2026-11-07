@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Pizzaface"
 description: "One of my series You Are What They Eat, a series of food-based monsters."
 tags:

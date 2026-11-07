@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "BWI Beacon Brochure"
 description: "A brochure for utility beacons used primarily for workplace safety around vehicles."
 tags:

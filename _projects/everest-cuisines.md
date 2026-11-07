@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Everest Cuisines"
 description: "A mock rebrand for a Nepalese buffet."
 tags:

@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Emerald Kingdom"
 description: "A tabletop RPG sourcebook inspired by the world of Oz."
 tags:

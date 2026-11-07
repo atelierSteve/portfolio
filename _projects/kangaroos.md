@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Gambling Kangaroos"
 description: "An editorial illustration based on an article about gambling in Australia."
 tags:

@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Costco"
 description: "Promotional e-commerce marketing material from a seasonal contract at Costco."
 tags:

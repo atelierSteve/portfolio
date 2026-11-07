@@ -598,3 +598,55 @@ h3.intro-headline {
     gap: 1rem;
   }
 }
+
+/* ========================================
+   11. IMAGE LIGHTBOX
+   ======================================== */
+
+.lightbox {
+  width: min(95vw, 90rem);
+  max-width: none;
+  max-height: 95svh;
+  padding: 0;
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.lightbox::backdrop {
+  background: rgb(0 0 0 / 90%);
+}
+
+.lightbox img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 95vw;
+  max-height: 88svh;
+  margin: auto;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1rem;
+  right: 1.25rem;
+  z-index: 10;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgb(255 255 255 / 40%);
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  background: rgb(255 255 255 / 15%);
+}
+
+body[data-page-type="project"] main img:not([data-no-lightbox]) {
+  cursor: zoom-in;
+}

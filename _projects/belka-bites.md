@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Belka Bites"
 description: "An affordable pet food that feels premium for mid-budget consumers."
 tags:

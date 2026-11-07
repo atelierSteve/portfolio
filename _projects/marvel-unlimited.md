@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Marvel Unlimited"
 description: "Mock magazine ads for the Marvel Unlimited app themed around using it “Anywhere, Anytime.”"
 tags:

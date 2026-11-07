@@ -1,5 +1,6 @@
 ---
 layout: project
+page_type: "project"
 title: "Annual Report"
 description: "What if annual reports were cool and not lame?"
 tags:
