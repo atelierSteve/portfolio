@@ -16,6 +16,8 @@ gallery:
         alt: ""
       - image: "/assets/images/costco/costco-01.webp"
         alt: ""
+  - layout: row
+    images:
       - image: "/assets/images/costco/costco-02.webp"
         alt: ""
       - image: "/assets/images/costco/costco-03.webp"
@@ -26,6 +28,8 @@ gallery:
         alt: ""
       - image: "/assets/images/costco/costco-05.webp"
         alt: ""
+  - layout: row
+    images:
       - image: "/assets/images/costco/costco-06.webp"
         alt: ""
       - image: "/assets/images/costco/costco-07.webp"
